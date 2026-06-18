@@ -1,0 +1,66 @@
+# BEGIN Newfold CF Optimization Header
+<IfModule mod_rewrite.c>
+	RewriteEngine On
+	# Skip setting for admin/API routes
+	RewriteCond %{REQUEST_URI} !/wp-admin/       [NC]
+	RewriteCond %{REQUEST_URI} !/wp-login\.php   [NC]
+	RewriteCond %{REQUEST_URI} !/wp-json/        [NC]
+	RewriteCond %{REQUEST_URI} !/xmlrpc\.php     [NC]
+	RewriteCond %{REQUEST_URI} !/admin-ajax\.php [NC]
+	# Skip if the exact cookie and value are already present
+	RewriteCond %{HTTP_COOKIE} !(^|;\s*)nfd-enable-cf-opt=63a6825d27cab0f204d3b602 [NC]
+	# Set env var if we passed all conditions
+	RewriteRule .* - [E=CF_OPT:1]
+</IfModule>
+<IfModule mod_headers.c>
+	# Set cookie only if env var is present (i.e., exact cookie not found)
+	Header set Set-Cookie "nfd-enable-cf-opt=63a6825d27cab0f204d3b602; path=/; Max-Age=86400; HttpOnly" env=CF_OPT
+</IfModule>
+# END Newfold CF Optimization Header
+# Security Headers - Added 2026-01-29
+<IfModule mod_headers.c>
+    # Prevent clickjacking attacks
+    Header always set X-Frame-Options "SAMEORIGIN"
+    # Prevent MIME type sniffing
+    Header always set X-Content-Type-Options "nosniff"
+    # Enable XSS protection in browsers
+    Header always set X-XSS-Protection "1; mode=block"
+    # Control referrer information
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+    # Content Security Policy
+    # Note: Adjust script-src and style-src as needed for your plugins
+    Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdnjs.cloudflare.com https://cdn.datatables.net; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://cdn.datatables.net; img-src 'self' data: https:; font-src 'self' data: https:;"
+</IfModule>
+# Disable directory browsing
+Options -Indexes
+# Protect wp-config.php
+<Files wp-config.php>
+    Order allow,deny
+    Deny from all
+</Files>
+# Protect debug.log
+<Files debug.log>
+    Order allow,deny
+    Deny from all
+</Files>
+# Protect .htaccess itself
+<Files .htaccess>
+    Order allow,deny
+    Deny from all
+</Files>
+# Disable PHP execution in uploads directory
+# Note: This is handled separately in wp-content/uploads/.htaccess
+# BEGIN WordPress
+# The directives (lines) between "BEGIN WordPress" and "END WordPress" are
+# dynamically generated, and should only be modified via WordPress filters.
+# Any changes to the directives between these markers will be overwritten.
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+RewriteBase /
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.php [L]
+</IfModule>
+# END WordPress

@@ -1,0 +1,83 @@
+.our-partners-widget {
+    max-width: 400px;
+    font-family: Arial, sans-serif;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+    border-radius: 8px;
+    overflow: hidden;
+    background: #fff;
+}
+
+.our-partners-header {
+    padding: 20px;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.our-partners-list a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.partner-item {
+    padding: 18px 20px;
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    transition: all 0.3s ease;
+    background: white;
+}
+
+.partner-icon {
+    margin-right: 15px;
+    font-size: 18px;
+    width: 24px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.partner-name {
+    transition: all 0.3s ease;
+}
+
+/* Hover animations for each item */
+.partner-item[data-item="1"]:hover {
+    background: #f8f8f8;
+    padding-left: 30px;
+}
+
+.partner-item[data-item="2"]:hover {
+    background: #f8f8f8;
+    transform: scale(1.01);
+}
+
+.partner-item[data-item="3"]:hover {
+    background: #f8f8f8;
+    letter-spacing: 1px;
+}
+
+.partner-item[data-item="4"]:hover {
+    background: #f8f8f8;
+    transform: translateX(10px);
+}
+
+.partner-item[data-item="5"]:hover {
+    background: #f8f8f8;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.partner-item:hover .partner-icon {
+    transform: rotate(360deg);
+}
+
+/* Match height functionality */
+.match-height {
+    height: 100%;
+}
+
+/* Remove bottom border from last item */
+.partner-item:last-child {
+    border-bottom: none;
+}

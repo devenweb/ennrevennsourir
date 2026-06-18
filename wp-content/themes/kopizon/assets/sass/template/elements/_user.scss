@@ -1,0 +1,386 @@
+.gva-user{
+   line-height: 1;
+   .login-account{
+      position: relative;
+      font-size: 15px;
+      display: inline-block;
+      text-transform: capitalize;
+      line-height: 1;
+      .profile{
+         display: inline-block;
+         transition: all 0.35s;
+         &:hover{
+            cursor: pointer;
+            color: $theme-color;
+         }
+         .avata:not(.without-login){
+            @include size(45px, 45px);
+            border-radius: 50%;
+            float: left;
+            margin-top: 1px;
+            overflow: hidden;
+            border: 1px solid rgba(0, 0, 0, 0.06);
+         }
+         .avata-icon{
+            width: 45px;
+            height: 45px;
+            line-height: 45px;
+            background: $bg-gray;
+            border-radius: 50%;
+         }
+      }
+      .user-account{
+         position: absolute;
+         top: calc(100% + 15px);
+         right: -10px;
+         width: 270px;
+         background: $white;
+         z-index: 11;
+         padding: 20px 25px 18px;
+         box-shadow: 0 2px 30px rgba(0, 0, 0, 0.1);
+         @include opacity(0);
+         transform: rotateX(-90deg);
+         transform-origin: 0 0;
+         transition: all 0.25s;
+         &:after{
+            content: '';
+            border: 10px solid transparent;
+            border-bottom-color: $white;  
+            position: absolute;
+            bottom: 100%;
+            right: 20px;
+         }
+         .hi-account{
+            text-transform: capitalize;
+            font-weight: 500;
+            color: $black;
+            text-align: left;
+            padding-bottom: 12px;
+            margin-bottom: 5px;
+            border-bottom: 1px solid $border-color;
+         }
+         .gva-nav-menu{
+            li{
+               display: block;
+               width: 100%;
+               text-align: left;
+               padding: 6px 0;
+               background: none;
+               a{
+                  padding: 6px 0; 
+                  font-weight: 400;
+                  font-size: 15.2px;
+                  color: $body-color;
+                  &:after{
+                     display: none;
+                  }
+                  &:hover{
+                     color: $theme-color;
+                  }
+               }
+            }
+            .my_account_nav_item_logout{
+               margin-top: 8px;
+               padding-top: 8px;
+               border-top-color: $border-color;
+            }
+         }
+         .menu-item-logout{
+            text-align: left;
+            padding-top: 3px;
+            a{
+               font-weight: 400;
+               font-family: $headings-font-family;
+               font-size: 16px;
+               color: $body-color;
+               i{
+                  margin-right: 10px;
+               }
+               &:hover{
+                  color: $theme-color;
+               }
+            }
+         }
+      }
+      &.open{
+         .user-account{
+            transform: rotateX(0);
+            opacity: 1;
+         }
+      }
+      &:hover{
+         .profile{
+            .name{
+               color: $theme-color;
+               .icon{
+                  color: $theme-color;
+               }
+            }
+         }
+      }
+      &.without-login{
+         .user-account{
+            max-width: 220px;
+            text-align: left;
+            ul{
+               list-style: none;
+               padding: 0;
+               margin: 0;
+               li{
+                  padding: 9px 0;
+                  a{
+                     color: $body-color; 
+                     .icon{
+                        width: 20px;
+                     }
+                  }
+               }
+            }
+         }
+         &.open{
+            .profile{
+               .avata-icon{
+                  i{
+                     color: $theme-color;
+                  }
+                  svg{
+                     fill: $theme-color;
+                  }
+               }
+            }
+         }
+      }
+   }
+}
+
+.user-two{
+   &__block{
+      position: relative;
+   }
+   &__logged{
+
+   }
+   &__profile{
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+   }
+   &__avata{
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      margin-right: 10px;
+      img{
+         border-radius: 50%;
+      }
+   }
+   &__name{
+      font-size: 13px;
+      font-weight: 400;
+      max-width: 106px;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      text-transform: capitalize;
+   }
+   &__login{
+      position: relative;
+   }
+   &__login-profile{
+      display: flex;
+      align-items: center;
+   }
+   &__avata-icon{
+      color: $theme-color;
+      font-size: 16px;
+      margin-right: 8px;
+      position: relative;
+      top: 2px;
+   }
+   &__nav-list{
+      display: flex;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      font-size: 13px;
+      > li{
+         position: relative;
+         &:after{
+            content: '/';
+            padding: 0 5px 0px 2px;
+         }
+         &:last-child{
+            &:after{
+               display: none;
+            }
+         }
+      }
+      a{
+         color: $body-color;
+         &:hover{
+            color: $theme-color;
+         }
+      }
+   }
+   &__popup{
+      position: absolute;
+      top: calc(100% + 15px);
+      right: -10px;
+      width: 270px;
+      background: $white;
+      z-index: 11;
+      padding: 20px 25px 18px;
+      box-shadow: 0 2px 30px rgba(0, 0, 0, 0.1);
+      @include opacity(0);
+      transform: rotateX(-90deg);
+      transform-origin: 0 0;
+      transition: all 0.25s;
+      &:after{
+         content: '';
+         border: 10px solid transparent;
+         border-bottom-color: $white;  
+         position: absolute;
+         bottom: 100%;
+         right: 20px;
+      }
+      .hi-account{
+         text-transform: capitalize;
+         font-weight: 400;
+         color: $black;
+         text-align: left;
+         font-size: 14px;
+         padding-bottom: 12px;
+         margin-bottom: 5px;
+         border-bottom: 1px solid $border-color;
+      }
+      .gva-nav-menu{
+         li{
+            display: block;
+            width: 100%;
+            text-align: left;
+            padding: 4px 0;
+            background: none;
+            a{
+               padding: 0; 
+               font-size: 15px;
+               color: $body-color;
+               font-weight: 300;
+               &:after{
+                  display: none;
+               }
+               &:hover{
+                  color: $theme-color;
+               }
+            }
+         }
+         .my_account_nav_item_logout{
+            margin-top: 8px;
+            padding-top: 8px;
+            border-top-color: $border-color;
+         }
+      }
+   }
+   &__block{
+      &.open{
+         .user-two__popup{
+            transform: rotateX(0);
+            opacity: 1;
+         }
+         .user-two__name{
+            color: $theme-color; 
+         }
+      }
+   }
+}
+
+.modal-ajax-user-form{
+   .close{
+      @include size(28px, 28px);
+      background: $theme-color;
+      color: $white;
+      position: absolute;
+      top: 0;
+      right: 0;
+      opacity: 1;
+      transition: all 0.35s;
+      font-size: 24px;
+      line-height: 24px;
+      border: 0;
+      border-radius: 0 0 0 4px;
+      z-index: 99;
+      &:hover{
+         opacity: 0.8;
+      }
+   }
+   .ajax-user-form{
+      padding: 15px 35px 5px;
+      .form-status{
+         font-size: 14px;
+         line-height: 24px;
+         a{
+            display: none!important;
+         }
+      }
+      .title{
+         text-align: center;
+         font-size: 22px;
+         margin: 0 0 20px;
+         padding: 0 0 10px;
+         font-weight: 600;
+         position: relative;
+         &:after{
+            content: '';
+            @include size(50px, 2px);
+            background: $theme-color;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            margin-left: -25px;
+            z-index: 1;
+         }
+      }
+      form{
+         .form-group{
+            margin-bottom: 20px;
+            label{
+               color: $black;
+               font-weight: 600;
+            }
+         }
+         .form-action{
+            input{
+               padding: 16px;
+            }
+         }
+      }
+      .lost-password, .user-registration{
+         text-align: center;
+         a{
+            color: $theme-color;
+            &:hover{
+               text-decoration: underline;
+            }
+         }
+      }
+      .user-registration{
+         margin-top: 10px;
+      }
+   }
+   .ajax-form-content{
+      &.ajax-preload{
+         .form-action{
+            position: relative;
+            &:after{
+               content: '';
+               @include size(100%, 100%);
+               position: absolute;
+               top: 0;
+               left: 0;
+               z-index: 11;
+               border: 1px solid $theme-color;
+               background: url('#{$image-theme-path-base}/preloader-2.gif') no-repeat center center rgba(255, 255, 255, 0.92);
+            }
+         }
+      }
+   }
+}

@@ -1,0 +1,229 @@
+.float-left{
+    float: left;
+}
+.float-right{
+    float: right;
+}
+.clear-float:after{
+    display: table;
+    clear: both;
+    content: "";
+}
+
+#wpneofrontenddata .wpneo-name {
+    color: $black;
+    margin-bottom: 5px;
+    font-size: 18px;
+}
+
+
+.wpneo-icon{
+    background-attachment: initial;
+    background-image: url("#{$image-theme-path-base}/icon.png");
+    background-repeat: no-repeat;
+    display: inline-block;
+    height: 26px;
+    width: 26px;
+    position: relative;
+    top: 2px;
+    margin-right: 5px;
+}
+.wpneo-icon-location{
+    background-position: -401px -11px;
+    width: 12px;
+}
+.wpneo-icon-facebook{ background-position: -28px -14px; }
+.wpneo-icon-twitter{ background-position: -75px -14px; }
+.wpneo-icon-gplus{ background-position: -122px -14px; }
+.wpneo-icon-pinterest{ background-position: -169px -14px; }
+.wpneo-icon-linkedin{ background-position: -588px -14px; }
+.wpneo-icon-tumblr{ background-position: -672px -14px; }
+.wpneo-icon-blogger{ background-position: -718px -14px; }
+.wpneo-icon-delicious{ background-position: -765px -14px; }
+.wpneo-icon-digg{ background-position: -812px -14px; }
+.wpneo-icon-reddit{ background-position: -991px -14px; }
+.wpneo-icon-stumbleupon{ background-position: -860px -14px; }
+.wpneo-icon-pocket{ background-position: -904px -14px; }
+.wpneo-icon-wordpress{ background-position: -948px -14px; }
+.wpneo-icon-whatsapp{ background-position: -1035px -14px; }
+.wpneo-icon-embed { background-position: -624px -15px; }
+
+/*------------------------------
+---------- Modal Info ----------
+--------------------------------*/
+a.wpneo-fund-modal-btn{
+    color: $black;
+}
+h2.wpneo-campaign-title{
+    font-size: 30px;
+    line-height: 40px;
+    margin-bottom: 5px;
+}
+.wpneo-wrapper p.wpneo-author-info{
+    margin-bottom: 5px;
+}
+.wpneo-author-info, .wpneo-author-info a{
+    color: #737373;
+    font-size: 18px;
+}
+
+.campaign-funding-info{
+    margin: 20px 0;
+}
+.campaign-funding-info ul li{
+    display: inline-block;
+    margin-right: 14px;
+}
+.campaign-funding-info ul li:last-child{
+    margin-right: 0;
+}
+.campaign-funding-info ul li .funding-amount{
+    font-weight: bold;
+    margin: 0;
+}
+.wpcrowd-admin-meta-info .funding-amount{
+    display: inline-block;
+    margin-bottom: 0;
+}
+.campaign-funding-info ul li span.info-text{
+    font-size: 12px;
+}
+input[type="number"].wpneo_donate_amount_field{
+    max-width: 120px;
+    border: 2px solid $black;
+    color: $black;
+    border-radius: 4px;
+    display: inline-block;
+}
+.wpneo-single-sidebar {
+    clear: both;
+    margin-bottom: 20px;
+}
+.wpneo-location-wrapper{
+    color: #737373;
+    display: inline-flex;
+    margin-top: -7px;
+    width: 100%;
+}
+
+/*------------------------------
+-------- Reward System ---------
+--------------------------------*/
+ul.wpneo-crowdfunding-update{
+    border-left: 3px solid $border-color;
+    padding-left: 35px !important;
+}
+ul.wpneo-crowdfunding-update li{
+    margin-bottom: 20px;
+}
+ul.wpneo-crowdfunding-update li .wpneo-crowdfunding-update-title{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 22px;
+    color: #4C76FF;
+}
+.wpneo-crowdfunding-update h4 {
+    margin-top: -26px;
+}
+span.round-circle{
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    background: $border-color;
+    display: block;
+    margin-left: -50px;
+}
+ul.wpneo-crowdfunding-update li:hover span.round-circle{
+    background: #4C76FF;
+}
+
+img.profile-avatar{
+    width: 105px;
+    height: 105px !important;
+    border-radius: 50%;
+}
+.wpneo-profile-left,
+.wpneo-profile-right{
+    display: inline-block;
+    float: left;
+}
+.wpneo-profile-right{
+    padding-left: 0;
+}
+.wpneo-profile-name{
+    font-size: 24px;
+    color: $black;
+    font-weight: bold;
+    margin-top: 5px;
+    line-height: 31px;
+}
+.wpneo-profile-campaigns{
+    line-height: 24px;
+    margin-top: 20px;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+.wpneo-profile-location span{
+    position: absolute;
+    color: #737373;
+}
+.wpneo-profile-location .wpneo-icon{
+    width: 20px;
+}
+.wpneo-profile-about{
+    padding: 0;
+    display: inline-block;
+    width: 100%;
+}
+.wpneo-profile-about h3{
+    font-size: 18px;
+    line-height: 50px;
+    margin: 0;
+}
+.wpneo-profile-about p{
+    font-size: 14px;
+    margin: 0;
+}
+.wpneo-profile-button{
+    text-decoration: none;
+    padding: 8px 20px;
+    background-color: $theme-color;
+    color: #fff;
+    font-size: 15px;
+    border-radius: 2px;
+    float: left;
+    margin: 30px 0px 0px;
+}
+
+.wpneo-profile-about .wpneo-social-link {
+    margin-right: 5px;
+}
+.wpneo-campaign-summary-inner .wpneo-raised-bar {
+    padding: 1px 0px 20px;
+}
+#wpneo-tab-baker_list table{
+    border: none;
+}
+#wpneo-tab-baker_list table tr td,
+#wpneo-tab-baker_list table tr th{
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    text-align: left;
+}
+.social-container{
+    display: inline-flex;
+}
+.social-container span{
+    margin-right: 10px;
+}
+
+.payment_method_twocheckout .form-row{display: block; padding:0 15px 0;width: 100%;float: left;}
+.payment_method_twocheckout .form-row.form-row-first{width: 50%;}
+.payment_method_twocheckout .form-row label{margin: 0!important;}
+.wc_payment_method select{margin-top: 12px;height: 42px;}
+.payment_method_twocheckout .form-row .help{margin: 12px 0 0 15px;display: inline-block;}
+
+@media(max-width: 767px){
+    .wpneo-list-details .campaign-single-summary{padding-bottom: 50px;}
+}

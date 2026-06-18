@@ -1,0 +1,337 @@
+@font-face {
+  font-family: 'qicomoon';
+  src:  url('fonts/icomoon.eot?n08z3y');
+  src:  url('fonts/icomoon.eot?n08z3y#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?n08z3y') format('truetype'),
+    url('fonts/icomoon.woff?n08z3y') format('woff'),
+    url('fonts/icomoon.svg?n08z3y#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="qicon-"],[class*=" qicon-"] {
+  font-family: 'qicomoon' !important;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  display: inline-block;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.qicon-camera:before {
+  content: "\e966";
+}
+.qicon-video-camera-2:before {
+  content: "\e967";
+}
+.qicon-camera-1:before {
+  content: "\e968";
+}
+.qicon-shopping-cart-1:before {
+  content: "\e964";
+}
+.qicon-shopping-cart:before {
+  content: "\e965";
+}
+.qicon-creativity:before {
+  content: "\e900";
+}
+.qicon-creativity-1:before {
+  content: "\e901";
+}
+.qicon-invention:before {
+  content: "\e902";
+}
+.qicon-smartphone:before {
+  content: "\e903";
+}
+.qicon-smartphone-1:before {
+  content: "\e904";
+}
+.qicon-nanotechnology:before {
+  content: "\e905";
+}
+.qicon-nanotechnology-1:before {
+  content: "\e906";
+}
+.qicon-browser:before {
+  content: "\e907";
+}
+.qicon-web:before {
+  content: "\e908";
+}
+.qicon-crowdfunding:before {
+  content: "\e909";
+}
+.qicon-crowdfunding-1:before {
+  content: "\e90a";
+}
+.qicon-crowdfunding-2:before {
+  content: "\e90b";
+}
+.qicon-crowdfunding-3:before {
+  content: "\e90c";
+}
+.qicon-fundraise:before {
+  content: "\e90d";
+}
+.qicon-crowdfunding-4:before {
+  content: "\e90e";
+}
+.qicon-chat:before {
+  content: "\e90f";
+}
+.qicon-speech-bubble:before {
+  content: "\e910";
+}
+.qicon-chat-1:before {
+  content: "\e911";
+}
+.qicon-plus:before {
+  content: "\e912";
+}
+.qicon-minus:before {
+  content: "\e913";
+}
+.qicon-add:before {
+  content: "\e914";
+}
+.qicon-search:before {
+  content: "\e915";
+}
+.qicon-search-1:before {
+  content: "\e916";
+}
+.qicon-call:before {
+  content: "\e917";
+}
+.qicon-email-2:before {
+  content: "\e918";
+}
+.qicon-location:before {
+  content: "\e919";
+}
+.qicon-entrepreneur:before {
+  content: "\e91a";
+}
+.qicon-location-1:before {
+  content: "\e91b";
+}
+.qicon-contact:before {
+  content: "\e91c";
+}
+.qicon-pin-1:before {
+  content: "\e91d";
+}
+.qicon-share:before {
+  content: "\e91e";
+}
+.qicon-check:before {
+  content: "\e91f";
+}
+.qicon-checked:before {
+  content: "\e920";
+}
+.qicon-stethoscope-1:before {
+  content: "\e921";
+}
+.qicon-tshirt:before {
+  content: "\e922";
+}
+.qicon-video-camera:before {
+  content: "\e923";
+}
+.qicon-project-management:before {
+  content: "\e924";
+}
+.qicon-salad:before {
+  content: "\e925";
+}
+.qicon-reading-book:before {
+  content: "\e926";
+}
+.qicon-crowdfunding-5:before {
+  content: "\e927";
+}
+.qicon-earth-day:before {
+  content: "\e928";
+}
+.qicon-save:before {
+  content: "\e929";
+}
+.qicon-badge:before {
+  content: "\e92a";
+}
+.qicon-support:before {
+  content: "\e92b";
+}
+.qicon-debit-card:before {
+  content: "\e92c";
+}
+.qicon-payment:before {
+  content: "\e92d";
+}
+.qicon-wallet:before {
+  content: "\e92e";
+}
+.qicon-phone:before {
+  content: "\e92f";
+}
+.qicon-pin-2:before {
+  content: "\e930";
+}
+.qicon-phone-call:before {
+  content: "\e931";
+}
+.qicon-email-3:before {
+  content: "\e932";
+}
+.qicon-account:before {
+  content: "\e933";
+}
+.qicon-cyborg:before {
+  content: "\e934";
+}
+.qicon-reading-book-1:before {
+  content: "\e935";
+}
+.qicon-fashion:before {
+  content: "\e936";
+}
+.qicon-medical-file:before {
+  content: "\e937";
+}
+.qicon-design:before {
+  content: "\e938";
+}
+.qicon-success:before {
+  content: "\e939";
+}
+.qicon-budget:before {
+  content: "\e93a";
+}
+.qicon-human-resources:before {
+  content: "\e93b";
+}
+.qicon-mission-2:before {
+  content: "\e93c";
+}
+.qicon-mission-3:before {
+  content: "\e93d";
+}
+.qicon-relationship:before {
+  content: "\e93e";
+}
+.qicon-trusted:before {
+  content: "\e93f";
+}
+.qicon-cost-saving:before {
+  content: "\e940";
+}
+.qicon-scrum:before {
+  content: "\e941";
+}
+.qicon-recommend:before {
+  content: "\e942";
+}
+.qicon-group:before {
+  content: "\e943";
+}
+.qicon-campaign:before {
+  content: "\e944";
+}
+.qicon-miscellaneous:before {
+  content: "\e945";
+}
+.qicon-confirmation:before {
+  content: "\e946";
+}
+.qicon-video-camera-1:before {
+  content: "\e947";
+}
+.qicon-lamp:before {
+  content: "\e948";
+}
+.qicon-mountain:before {
+  content: "\e949";
+}
+.qicon-rocket:before {
+  content: "\e94a";
+}
+.qicon-money-bag:before {
+  content: "\e94b";
+}
+.qicon-crowdfunding-6:before {
+  content: "\e94c";
+}
+.qicon-invention-1:before {
+  content: "\e94d";
+}
+.qicon-email:before {
+  content: "\e94e";
+}
+.qicon-email-1:before {
+  content: "\e94f";
+}
+.qicon-pin:before {
+  content: "\e950";
+}
+.qicon-networking:before {
+  content: "\e951";
+}
+.qicon-photograph:before {
+  content: "\e952";
+}
+.qicon-translation:before {
+  content: "\e953";
+}
+.qicon-stethoscope:before {
+  content: "\e954";
+}
+.qicon-skincare:before {
+  content: "\e955";
+}
+.qicon-computer:before {
+  content: "\e956";
+}
+.qicon-graphic-designer:before {
+  content: "\e957";
+}
+.qicon-checkmark:before {
+  content: "\e958";
+}
+.qicon-mission:before {
+  content: "\e959";
+}
+.qicon-mission-1:before {
+  content: "\e95a";
+}
+.qicon-team:before {
+  content: "\e95b";
+}
+.qicon-team-1:before {
+  content: "\e95c";
+}
+.qicon-increment:before {
+  content: "\e95d";
+}
+.qicon-increment-1:before {
+  content: "\e95e";
+}
+.qicon-right-arrow:before {
+  content: "\e95f";
+}
+.qicon-left-arrow:before {
+  content: "\e960";
+}
+.qicon-handshake:before {
+  content: "\e961";
+}
+.qicon-thumbs-up:before {
+  content: "\e962";
+}
+.qicon-thumbs-up-1:before {
+  content: "\e963";
+}

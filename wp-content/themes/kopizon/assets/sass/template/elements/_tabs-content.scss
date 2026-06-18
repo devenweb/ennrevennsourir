@@ -1,0 +1,155 @@
+.tabs-content-one{
+   &__single{
+      box-shadow: 0px 10px 60px 0px rgba(0, 0, 0, 0.1);
+   }
+   &__nav{
+      margin-bottom: 5px;
+      display: flex;
+      justify-content: flex-start;
+      row-gap: 10px;
+      margin: 0 -5px;
+      @media(max-width: 768px){
+         background: $bg-gray;
+         margin: 0;
+         padding: 15px;
+      }
+   }
+   &__nav-item{
+      display: flex;
+      padding: 0 5px;
+   }
+   &__nav-link{
+      padding: 15px 50px 24px!important;
+      background: $theme-color;
+      width: 100%;
+      position: relative;
+      transition: all 0.35s;
+      @media(max-width: 1200px){
+         padding: 12px 30px 20px!important;
+      }
+      @media(max-width: 1024px){
+         padding: 12px 20px 20px!important;
+      }
+      @media(max-width: 768px){
+         padding: 8px 15px 15px!important;
+      }
+      &.active{
+         background: $white;
+         .tabs-content-one__nav-title{
+            color: $headings-color;
+         }
+      }
+   }
+   &__nav-title{
+      display: block;
+      font-size: 18px;
+      font-weight: 600;
+      text-align: center;
+      margin-top: 10px;
+      line-height: 20px;
+      color: $white;
+      @media(max-width: 1024px){
+         font-size: 16px;
+         margin-top: 5px;
+      }
+   }
+   &__content{
+      background: $white;
+   }
+   &__tab-content{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      padding: 50px;
+      @media(max-width: 1200px){
+         padding-top: 30px;
+      }
+      @media(max-width: 1024px){
+         padding: 20px;
+      }
+   } 
+   &__left{
+      flex: 0 0 45%;
+      width: 45%;
+      padding-right: 20px;
+      @media(max-width: 640px){
+         flex: 0 0 100%;
+         width: 100%;
+         padding-right: 0;
+      }
+   }
+   &__right{
+      flex: 0 0 55%;
+      width: 55%;
+      padding-left: 30px;
+      @media(max-width: 1200px){
+         padding-left: 20px;
+      }
+      @media(max-width: 640px){
+         flex: 0 0 100%;
+         width: 100%;
+         text-align: left;
+         padding-top: 20px;
+      }
+   }
+   &__title{
+      font-size: 28px;
+      @media(max-width: 1024px){
+         font-size: 22px;
+         margin: 0 0 10px;
+      }
+   }
+   &__desc{
+      ul{
+         color: $black;
+         display: flex;
+         flex-wrap: wrap;
+         list-style: none;
+         padding: 15px 0 0;
+         > li{
+            font-size: 16px;
+            font-weight: 400;
+            flex: 0 0 50%;
+            width: 50%;
+            margin-top: 10px;
+            padding-left: 35px;
+            position: relative;
+            line-height: 26px;
+            @media(max-width: 1024px){
+               font-size: 16px;
+               padding-left: 20px;
+               line-height: 24px;
+            }
+            @media(max-width: 480px){
+               flex: 0 0 100%;
+               width: 100%;
+            }
+            &:after{
+               content: "\f058";
+               font-family: "Font Awesome 5 Free";
+               font-weight: 900;
+               position: absolute;
+               top: 0;
+               left: 0;
+               z-index: 1;
+               color: $theme-color;
+            }
+         }
+      }
+   }
+   &__image{
+      display: inline-block;
+      position: relative;
+      padding-left: 20px;
+      &:after{
+         content: '';
+         width: 20px;
+         position: absolute;
+         left: 0;
+         top: 20px;
+         bottom: 20px;
+         background: $theme-color;
+         z-index: 1;
+      }
+   }
+}

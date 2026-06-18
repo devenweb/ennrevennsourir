@@ -1,0 +1,126 @@
+.custom-breadcrumb{
+	position: relative;
+	background-color: $black;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
+	margin-bottom: 35px;
+	position: relative;
+	z-index: 1;
+	&:after{
+		content: '';
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		z-index: 1;
+		background: url('#{$image-theme-path-base}bg-shape.png') no-repeat bottom right;
+		mix-blend-mode: screen;
+		background-size: contain;
+		@media(max-width: 1024px){
+			opacity: 0.38;
+		}
+	}
+	.breadcrumb-main{
+	  position: relative;
+	  z-index: 11; 
+	}
+	.breadcrumb-container-inner{
+	  	position: relative;
+	  	padding: 110px 0 110px;
+	  	@include media-breakpoint-down(lg){
+			padding-bottom: 90px;
+			padding-top: 90px;
+	  	}
+	  	@include media-breakpoint-down(md){
+		 	padding-bottom: 70px;
+		 	padding-top: 70px;
+	  	}
+	  	&.align-center{
+			text-align: center;
+	  	}
+	  	&.align-right{
+			text-align: right;
+	  	}
+	}
+	.heading-title{
+		font-size: 40px;
+		color: $white;
+		margin: 2px 0 0;
+		word-wrap: break-word;
+		@include media-breakpoint-down(lg){
+		 	font-size: 36px; 
+	  	}
+	  	@include media-breakpoint-down(md){
+		 	font-size: 32px; 
+	  	}
+	  	@include media-breakpoint-down(sm){
+		 	font-size: 28px;
+	  	}
+	}
+  	.breadcrumb{ 
+		margin-bottom: 0;
+		display: inline-block;
+		font-size: 14px;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+		color: $white;
+		a{
+			color: $white;
+			&:hover{
+				text-decoration: underline;
+			}
+		}
+		li{
+			float: left;
+			position: relative;
+			z-index: 11;
+			line-height: 1;
+			padding: 0 18px;
+			&:after{
+			  content: '/';
+			  position: absolute;
+			  bottom: 0;
+			  left: -3px;
+			  z-index: 1; 
+			  color: $white;
+			}
+			&:first-child{
+				padding-left: 0;
+				&:after{
+					display: none;
+				}
+			}
+			&:last-child{
+				padding-right: 0;
+			}
+		}
+	}
+  .breadcrumb-overlay{
+	 position: absolute;
+	 @include size(100%, 100%);
+	 z-index: 1;
+	 top: 0;
+	 left: 0;
+  }
+  
+  &.text-light{
+	 .heading-title{
+		color: $white 
+	 }
+  }
+}
+
+body.home.blog{
+  .title-layout-standard{ 
+	 .custom-breadcrumb{
+		.heading-title{
+		  display: inline-block!important;
+		  float: left;
+		  font-size: 18px;
+		  margin: 5px 0 0;
+		}
+	 }
+  }
+}

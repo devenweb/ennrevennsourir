@@ -1,0 +1,252 @@
+# Translation of Plugins - WPFront Scroll Top - Stable (latest release) in French (France)
+# This file is distributed under the same license as the Plugins - WPFront Scroll Top - Stable (latest release) package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2025-02-10 18:52:32+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: GlotPress/4.0.1\n"
+"Language: fr\n"
+"Project-Id-Version: Plugins - WPFront Scroll Top - Stable (latest release)\n"
+
+#: includes/settings/class-settings-view-model.php:456
+msgid "Media Library"
+msgstr "Médiathèque"
+
+#: includes/settings/class-settings-view-model.php:533
+msgid "Font Awesome Button"
+msgstr "Bouton Font Awesome"
+
+#: includes/settings/class-settings-view-model.php:546
+msgid "Link to Page"
+msgstr "Lien vers la page"
+
+#: includes/settings/class-settings-view-model.php:544
+msgid "Scroll to Top"
+msgstr "Défilement vers le haut"
+
+#: includes/settings/class-settings-view-model.php:446
+msgid "Font Awesome URL"
+msgstr "Font Awesome URL"
+
+#: includes/settings/class-settings-view-model.php:443
+msgid "Mouse Over Color"
+msgstr "Souris sur la couleur"
+
+#: includes/settings/class-settings-view-model.php:452
+msgid "Offset"
+msgstr "Décalage"
+
+#: includes/settings/class-settings-view-model.php:451
+msgid "Scroll Container CSS Selector"
+msgstr "Sélecteur CSS de conteneur de défilement"
+
+#: includes/settings/class-settings-view-model.php:454
+msgid "Page URL"
+msgstr "URL de la page"
+
+#: includes/settings/class-settings-view-model.php:433
+msgid "Button Action"
+msgstr "Action du bouton"
+
+#: includes/settings/class-settings-view-model.php:458
+msgid "Select Image"
+msgstr "Sélectionner l’image"
+
+#: includes/settings/class-settings-view-model.php:457
+msgid "Choose Image"
+msgstr "Choisir l’image"
+
+#: includes/settings/class-settings-view-model.php:531
+msgid "Image Button"
+msgstr "Bouton d’image"
+
+#: includes/settings/class-settings-view-model.php:453
+msgid "How to find CSS selector?"
+msgstr "Comment trouver un sélecteur CSS ?"
+
+#: includes/settings/class-settings-view-model.php:506
+#: includes/settings/class-settings-view-model.php:507
+#: includes/settings/class-settings-view-model.php:511
+msgid "ex:"
+msgstr "ex :"
+
+#: includes/settings/class-settings-view-model.php:545
+msgid "Scroll to Element"
+msgstr "Faites défiler jusqu’à l’élément"
+
+#: includes/settings/class-settings-view-model.php:448
+msgid "Icon Color"
+msgstr "Couleur de l’icône"
+
+#: includes/settings/class-settings-view-model.php:447
+msgid "Do not include URL"
+msgstr "Ne pas inclure l’URL"
+
+#: includes/settings/class-settings-view-model.php:445
+msgid "Icon Class"
+msgstr "Classe d’icônes"
+
+#: includes/settings/class-settings-view-model.php:450
+msgid "Element CSS Selector"
+msgstr "Sélecteur CSS d’éléments"
+
+#: includes/settings/class-settings-view.php:55
+msgid "Filter"
+msgstr "Filtre"
+
+#: includes/settings/class-settings-view.php:53
+msgid "Display"
+msgstr "Afficher"
+
+#: includes/settings/class-settings-view-model.php:441
+msgid "Text Color"
+msgstr "Couleur du texte"
+
+#: includes/settings/class-settings-view-model.php:419
+msgid "Enabled"
+msgstr "Activé"
+
+#: includes/settings/class-settings-view-model.php:440
+msgid "Text"
+msgstr "Texte"
+
+#: includes/settings/class-settings-view.php:128
+msgid "Save Changes"
+msgstr "Enregistrer les modifications"
+
+#: includes/settings/class-settings-view-model.php:434
+#: includes/settings/class-settings-view.php:54
+msgid "Location"
+msgstr "Emplacement"
+
+#: includes/settings/class-settings-view-model.php:557
+msgid "Bottom Right"
+msgstr "En bas à droite"
+
+#: includes/settings/class-settings-view-model.php:559
+msgid "Top Right"
+msgstr "En haut à droite"
+
+#: includes/settings/class-settings-view-model.php:558
+msgid "Bottom Left"
+msgstr "En bas à gauche"
+
+#: includes/settings/class-settings-view-model.php:442
+msgid "Background Color"
+msgstr "Couleur d&rsquo;arrière plan"
+
+#: includes/settings/class-settings-view-model.php:437
+msgid "Custom URL"
+msgstr "URL personnalisée"
+
+#: includes/settings/class-settings-view-model.php:444
+#: includes/settings/class-settings-view-model.php:449
+msgid "Custom CSS"
+msgstr "CSS personnalisée"
+
+#: includes/settings/class-settings-view-model.php:423
+msgid "Button Opacity"
+msgstr "Opacité du Bouton"
+
+#: includes/settings/class-settings-view-model.php:455
+msgid "Display on Pages"
+msgstr "Afficher sur les pages"
+
+#. Plugin URI of the plugin
+#: wpfront-scroll-top.php
+msgid "http://wpfront.com/scroll-top-plugin/"
+msgstr "http://wpfront.com/scroll-top-plugin/"
+
+#. Author URI of the plugin
+#: wpfront-scroll-top.php
+msgid "http://wpfront.com"
+msgstr "http://wpfront.com"
+
+#: includes/settings/class-settings-view-model.php:560
+msgid "Top Left"
+msgstr "En haut à gauche"
+
+#: includes/settings/class-settings-view-model.php:432
+msgid "Button Style"
+msgstr "Style du bouton"
+
+#: includes/settings/class-settings-view-model.php:425
+msgid "Scroll Duration"
+msgstr "Durée de défilement"
+
+#: includes/settings/class-settings-view-model.php:428
+msgid "Hide on Small Window"
+msgstr "Masquer pour les petites fenêtres"
+
+#: includes/settings/class-settings-view-model.php:429
+msgid "Small Window Max Width"
+msgstr "Largeur maximale des petites fenêtres"
+
+#: includes/settings/class-settings-view-model.php:435
+msgid "Margin X"
+msgstr "Marge X"
+
+#: includes/settings/class-settings-view-model.php:436
+msgid "Margin Y"
+msgstr "Marge Y"
+
+#: includes/settings/class-settings-view-model.php:142
+#: includes/settings/class-settings-view.php:71
+msgid "WPFront Scroll Top Settings"
+msgstr "Réglages de WPFront Scroll Top"
+
+#: includes/settings/class-settings-view-model.php:422
+msgid "Button Size"
+msgstr "Taille du bouton"
+
+#: includes/settings/class-settings-view-model.php:532
+msgid "Text Button"
+msgstr "Texte du bouton"
+
+#: includes/settings/class-settings-view-model.php:431
+msgid "Hide on iframes"
+msgstr "Masquer sur les iframes"
+
+#: includes/settings/class-settings-view-model.php:427
+msgid "Auto Hide After"
+msgstr "Masquer automatiquement après"
+
+#: includes/settings/class-settings-view.php:150
+msgid "Buy me a Beer or Coffee"
+msgstr "Payez moi une bière ou un café"
+
+#: includes/settings/class-settings-view-model.php:143
+msgid "Scroll Top"
+msgstr "Défiler vers le haut"
+
+#. Plugin Name of the plugin
+#: wpfront-scroll-top.php
+msgid "WPFront Scroll Top"
+msgstr "WPFront Scroll Top"
+
+#: includes/settings/class-settings-view-model.php:424
+msgid "Button Fade Duration"
+msgstr "Durée d’estompement du bouton"
+
+#: includes/settings/class-settings-view-model.php:421
+msgid "Scroll Offset"
+msgstr "Offset de défilement"
+
+#: includes/settings/class-settings-view-model.php:221
+msgid "Settings"
+msgstr "Paramètres"
+
+#: includes/settings/class-settings-view-model.php:430
+msgid "Hide on WP-ADMIN"
+msgstr "Masquer dans l’administration"
+
+#: includes/settings/class-settings-view-model.php:438
+msgid "Image ALT"
+msgstr "Texte alternatif de l’image"
+
+#: includes/settings/class-settings-view-model.php:426
+msgid "Auto Hide"
+msgstr "Masquage automatique"

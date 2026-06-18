@@ -1,0 +1,28 @@
+# WordPress ignores
+wp-content/uploads/
+wp-content/upgrade/
+wp-content/backup-db/
+wp-content/backups/
+wp-content/updraft/
+wp-content/cache/
+wp-content/et-cache/
+
+# Log files
+*.log
+sitemap.xml
+sitemap.xml.gz
+
+# System files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+desktop.ini
+
+# IDEs and Editors
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?

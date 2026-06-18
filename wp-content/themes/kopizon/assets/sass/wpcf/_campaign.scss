@@ -1,0 +1,1001 @@
+.removecampaignupdate, .wp-crowd-btn-primary,  .wpneo-edit-btn, .wp-crowd-btn, .wpneo-cancel-btn, .wpneo-save-btn, .wpneo-image-upload, #wpneo_active_edit_form, .wpneo-image-upload-btn{
+  padding: 8px 18px;
+  line-height: 25px;
+  display: inline-block;
+  font-size: 13px;
+  letter-spacing: 2px;
+  border-radius: 0;
+  background: $theme-color;
+  border: none;
+  font-weight: 500;
+  color: $white!important;
+  text-transform: uppercase;
+  position: relative;
+  transition: all 0.35s;
+  @include media-breakpoint-down(sm){
+   font-size: 12px;
+  }
+  &:hover{
+     opacity: 0.9; 
+  }
+}
+
+.campaign-progress{
+   .progress{
+      .progress-bar{
+         transition: none!important;
+      }
+   }
+}
+
+.wcf-media__one{
+   display: flex;
+   background: $white;
+   box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.1);
+   padding: 8px 16px 3px;
+   .wcf-media__gallery{
+      margin-right: 15px;
+      .wcf-media__gallery-link{
+         display: inline-block;
+         font-size: 18px;
+         position: relative;
+         line-height: 1;
+         color: $body-color;
+         i{
+            font-weight: 700;
+         }
+         span{
+            display: inline-block;
+            background: $theme-color;
+            color: #fff;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            font-size: 11px;
+            line-height: 14px;
+            position: absolute;
+            text-align: center;
+            right: -8px;
+            top: -4px;
+         }
+         &:hover{
+            color: $theme-color;
+         }
+      }
+   }
+   .wcf-media__video{
+      display: inline-block;
+      font-size: 20px;
+      position: relative;
+      color: $body-color;
+      i{
+         font-weight: 700;
+      }
+      &:hover{
+         color: $theme-color;
+      }
+   }
+}
+
+.campaign-one{
+   &__single{
+      margin-bottom: 30px; 
+      padding: 10px;
+      border: 1px solid $border-color;
+   }
+   &__image{
+      position: relative;
+   }
+   &__overlay{
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+      @include size(100%, 100%);
+      background: $black;
+      opacity: 0;
+      transition: all 0.35s;
+   }
+   &__media{
+      position: absolute;
+      bottom: -20px;
+      left: 50%;
+      z-index: 99;
+      transform: translateX(-50%);
+   }
+   &__love{
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      z-index: 11;
+      line-height: 1;
+      .wpneo-icon{
+         @include size(39px, 39px);
+         border-radius: 50%;
+         box-shadow: 0px 10px 30px 0px rgba(0, 0, 0, 0.07);
+         background: #fff;
+         opacity: 1;
+         text-align: center;
+         margin: 0;
+         transition: all 0.35s;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         &:after{
+            content: '\f004';
+            font-family: $font-icon-awesome;
+            color: $black;
+            font-size: 18px;
+            font-weight: 400;
+            font-style: normal;
+         }
+         &.wpneo-icon-love-empty{
+
+         }
+         &.wpneo-icon-love-full{
+            background: $theme-color;
+             &:after{
+               color: $white;
+            }
+            &:hover{
+               background: $theme-color;
+               opacity: 0.8;
+            }
+         }
+         &:hover{
+            background: $bg-gray;
+         }
+      }
+   }
+   &__categories{
+      display: inline-block;
+      background-color: $theme-color-2;
+      color: $white;
+      padding: 6px 20px;
+      line-height: 18px;
+      font-size: 12px;
+      font-weight: 500;
+      position: absolute;
+      top: 20px;
+      left: -5px;
+      z-index: 11;
+      &:after{
+         content: '';
+         position: absolute;
+         top: 100%;
+         left: 0;
+         content: "";
+         border-right: 0px solid transparent;
+         border-left: 5px solid transparent;
+         border-top: 5px solid $theme-color-2;
+      }
+      a{
+         text-transform: capitalize;
+         color: $white;
+         font-weight: 500;
+         &:hover{
+            text-decoration: underline;
+         }
+      }
+   }
+   &__content{
+      padding: 45px 20px 20px;
+      text-align: center;
+      @media(max-width: 1300px){
+         padding: 30px 10px 15px;
+      }
+   }
+   &__time-remaining{ 
+      font-size: 13px;
+      font-weight: 500;
+      i{
+         font-size: 14px;
+         margin-right: 2px;
+         color: $theme-color;
+      } 
+   }
+   &__title{
+      font-size: 20px;
+      margin: 2px 0 22px;
+      line-height: 28px; 
+      @include media-breakpoint-down(lg){
+         font-size: 20px;
+      }
+   }
+   &__info-wrap{
+      display: flex;
+      border-top: 1px solid $border-color;
+      text-align: left;
+   }
+   &__achive{
+      flex: 0 0 50%;
+      width: 50%;
+      border-right: 1px solid $border-color;
+      display: flex;
+      padding-right: 10px;
+      padding-top: 16px;
+      align-items: center;
+      justify-content: flex-start;
+   }
+   &__achive-icon{
+      flex: 0 0 26px;
+      width: 26px;
+      font-size: 25px;
+      color: $theme-color;
+      padding-top: 6px;
+   }
+   &__achive-content{
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 22px;
+      padding-left: 12px;
+   }
+   &__achive-label{
+      display: block;
+   }
+   &__achive-value{
+      display: block;
+      color: $headings-color;
+   }
+   &__goal{
+      flex: 0 0 50%;
+      width: 50%;
+      padding-left: 10px;
+      padding-top: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+   }
+   &__goal-icon{
+      flex: 0 0 26px;
+      width: 26px;
+      font-size: 25px;
+      color: $theme-color;
+      padding-top: 6px;
+   }
+   &__goal-content{
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 22px;
+      padding-left: 12px;
+   }
+   &__goal-label{
+      display: block;
+   }
+   &__goal-value{
+      display: block;
+      color: $headings-color;
+   }
+   &__bottom{
+      background: $bg-gray;
+      text-align: left;
+      padding: 15px 20px;
+   }
+   &__bottom-wrap{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 14px;
+   }
+   &__raised-label{
+      flex: 0 0 56px;
+      width: 56px;
+      font-weight: 500;
+      color: $black;
+   }
+   &__progress{
+      flex: 0 0 calc(100% - 114px);
+      width: calc(100% - 114px);
+      &.percent-0{
+         flex: 0 0 calc(100% - 88px);
+         width: calc(100% - 88px);
+      }
+      &.percent-small{         
+         .progress-bar{
+            &:after{
+               left: 100%!important;
+               right: auto;
+            }
+         }
+      }
+      .progress{
+         height: 3px;
+         background: $white;
+         overflow: visible;
+         .progress-bar{
+            background: $theme-color-2;
+            position: relative;
+            overflow: visible!important;
+            transition: none!important;
+            &:after{
+               content: '';
+               width: 9px;
+               height: 9px;
+               border-radius: 50%;
+               background: $theme-color-2;
+               position: absolute;
+               right: 0;
+               top: -3px;
+               z-index: 1;
+            }
+         }
+      }
+   }
+   &__percent-raised{
+      flex: 0 0 58px;
+      width: 58px;
+      text-align: right;
+      font-weight: 400;
+      &.percent-0{
+         flex: 0 0 32px;
+         width: 32px;
+      }
+   }
+   &:hover{
+      box-shadow: 0px 15px 28px 0px rgba(27, 31, 46, 0.06);
+      .campaign-one{
+         &__overlay{
+            opacity: 0.2;
+         }
+      }
+   }
+}
+
+.campaign-two{
+   &__single{
+      margin-bottom: 30px;
+      position: relative;
+      width: 100%;
+      max-width: 800px;
+   }
+   &__image{
+      position: relative;
+   }
+   &__overlay{
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+      @include size(100%, 100%);
+      background: linear-gradient( 0deg, rgb(27,31,46) 0%, rgba(27,31,46,0) 100%);
+      background: -moz-linear-gradient( 0deg, rgb(27,31,46) 0%, rgba(27,31,46,0) 100%);
+      background: -webkit-linear-gradient( 0deg, rgb(27,31,46) 0%, rgba(27,31,46,0) 100%);
+      background: -ms-linear-gradient( 0deg, rgb(27,31,46) 0%, rgba(27,31,46,0) 100%);
+      transition: all 0.35s;
+   }
+   &__love{
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      z-index: 11;
+      line-height: 1;
+      .wpneo-icon{
+         background: none;
+         @include size(36px, 36px);
+         border-radius: 50%;
+         background: $white;
+         text-align: center;
+         margin: 0;
+         transition: all 0.35s;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         &:after{
+            content: '\f004';
+            font-family: $font-icon-awesome;
+            top: 0;
+            left: 0;
+            color: $black;
+            font-style: normal;
+            font-size: 14px;
+            font-weight: 400;
+         }
+         &.wpneo-icon-love-empty{
+
+         }
+         &.wpneo-icon-love-full{
+            background: $theme-color-2;
+            &:after{
+               color: $white;
+            }
+            &:hover{
+               background: $theme-color-2;
+               opacity: 0.9;
+            }
+         }
+         &:hover{
+            background: $bg-gray;
+         }
+      }
+   }
+   &__content{
+      padding: 25px 30px 35px;
+      border-top: 0;
+      background: transparent;
+      position: absolute;
+      bottom: 10px;
+      left: 10px;
+      right: 10px;
+      z-index: 11;
+      transition: all 0.35s;
+      @media(max-width: 1320px){
+         padding: 20px 20px;
+      }
+      @media(max-width: 1024px){
+         padding: 10px 15px 15px;
+      }
+      &:before{
+         content: '';
+         position: absolute;
+         width: 100%;
+         height: 100%;
+         bottom: -10px;
+         left: 0;
+         background: $white;
+         transition: all 0.36s;
+         opacity: 0;
+         z-index: -1;
+      }
+   }
+   &__categories{
+      display: inline-block;
+      background-color: $theme-color-2;
+      color: $white;
+      padding: 6px 20px;
+      line-height: 18px;
+      font-size: 12px;
+      font-weight: 500;
+      position: absolute;
+      top: 20px;
+      left: -5px;
+      z-index: 11;
+      &:after{
+         content: '';
+         position: absolute;
+         top: 100%;
+         left: 0;
+         content: "";
+         border-right: 0px solid transparent;
+         border-left: 5px solid transparent;
+         border-top: 5px solid $theme-color-2;
+      }
+      a{
+         text-transform: capitalize;
+         color: $white;
+         font-weight: 500;
+         &:hover{
+            text-decoration: underline;
+         }
+      }
+   }
+   &__time_remaining{
+      display: inline-block;
+      font-size: 14px;
+      font-weight: 400;
+      color: #d7d7d7;
+      @media(max-width: 640px){
+         display: none;
+      }
+      i{
+         margin-right: 2px;
+         color: $theme-color;
+      }
+   }
+   &__title{
+      font-size: 20px;
+      line-height: 30px;
+      margin: 5px 0 15px;
+      a{
+         color: $white;
+      }
+      @media(max-width: 1320px){
+         font-size: 18px;
+         margin: 0 0 6px;
+         line-height: 28px;
+      }
+   }
+   &__progress{
+      margin-top: 4px;
+      .progress{
+         height: 3px;
+         background: rgba(255, 255, 255, 0.38);
+         overflow: visible;
+         .progress-bar{
+            background: $theme-color-2;
+            position: relative;
+            overflow: visible!important;
+            transition: none!important;
+            &:after{
+               content: '';
+               width: 9px;
+               height: 9px;
+               border-radius: 50%;
+               background: $theme-color-2;
+               position: absolute;
+               right: 0;
+               top: -3px;
+               z-index: 1;
+            }
+         }
+      }
+   }
+   &__raised{
+      font-size: 14px;
+      font-weight: 400;
+      color: $white;
+      margin-bottom: 2px;
+      display: flex;
+      justify-content: space-between;
+   }
+
+   &__single{
+      &:hover{
+         box-shadow: 10px 18px 20px 0px rgba(0, 0, 0, 0.03);
+         .campaign-two{
+            &__content{
+               &:before{
+                  bottom: 0;
+                  opacity: 1;
+               }
+            }
+            &__meta{
+               color: $body-color;
+            }
+            &__time_remaining{
+               color: $body-color;
+               .campaign-time-remaining{
+                  &:after{
+                     color: $black;
+                  }
+               }
+            }
+            &__title{
+               a{
+                  color: $black;
+                  &:hover{
+                     color: $theme-color;
+                  }
+               }
+            }
+            &__progress{
+               .progress{
+                  background: rgba(0, 0, 0, 0.2);
+               }
+            }
+            &__raised{
+               color: $body-color;
+            }
+            &__raised-value{
+               color: $theme-color;
+            }
+            &__goal{
+               color: $theme-color-2;
+            }
+         }
+      }
+   }
+}
+
+.campaign-three{
+   &__single{
+      margin-bottom: 30px; 
+      transition: all 0.35s;
+      width: 100%;
+   }
+   &__wrap{
+      display: flex;
+      justify-content: center;
+      @media(max-width: 520px){
+         display: block;
+      }
+   }
+   &__image{
+      position: relative;
+      width: 42%;
+      flex: 0 0 42%;
+      @media(max-width: 520px){
+         width: 100%;
+         flex: 0 0 100%;
+         min-height: 320px;
+      }
+   }
+   &__image-content{
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      img{
+         position: absolute;
+         height: 100%;
+         width: 100%;
+         object-fit: cover;
+         transform: translate(-50%,-50%);
+         top: 50%;
+         left: 50%;
+      }
+   }
+   &__overlay{
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+      @include size(100%, 100%);
+      background: $black;
+      opacity: 0;
+      transition: all 0.35s;
+   }
+   &__love{
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      z-index: 11;
+      line-height: 1;
+      .wpneo-icon{
+         background: none;
+         @include size(35px, 35px);
+         border-radius: 50%;
+         background: #fbfbfb;
+         opacity: 0.6;
+         text-align: center;
+         margin: 0;
+         transition: all 0.35s;
+         &:after{
+            content: '\f004';
+            font-family: $font-icon-awesome;
+            position: absolute; 
+            top: 0;
+            left: 0;
+            color: $black;
+            font-style: normal;
+            line-height: 38px;
+            width: 35px;
+            text-align: center;
+            font-size: 14px;
+            font-weight: 900;
+         }
+         &.wpneo-icon-love-empty{
+
+         }
+         &.wpneo-icon-love-full{
+            background: $theme-color;
+            opacity: 0.8;
+             &:after{
+               color: $white;
+            }
+         }
+         &:hover{
+            opacity: 1;
+         }
+      }
+   }
+   &__content{
+      padding: 35px 35px 0;
+      border-top: 0;
+      background: $white;
+      border: 1px solid $border-color;
+      border-left: 0;
+   }
+   &__categories{
+      display: inline-block;
+      background-color: $theme-color-2;
+      color: $white;
+      padding: 6px 20px;
+      line-height: 18px;
+      font-size: 12px;
+      font-weight: 500;
+      position: relative;
+      margin-bottom: 20px;
+     // position: absolute;
+     // top: 20px;
+      //left: -5px;
+      z-index: 11;
+      &:after{
+         content: '';
+         position: absolute;
+         top: 100%;
+         left: 0;
+         content: "";
+         border-right: 0px solid transparent;
+         border-left: 5px solid transparent;
+         border-top: 5px solid $theme-color-2;
+      }
+      a{
+         text-transform: capitalize;
+         color: $white;
+         font-weight: 500;
+         &:hover{
+            text-decoration: underline;
+         }
+      }
+   }
+   &__title{
+      font-size: 18px;
+      margin: 0 0 15px;
+      line-height: 26px;
+      @include media-breakpoint-down(lg){
+         font-size: 16px;
+      }
+   }
+   &__progress{
+      margin-top: 4px;
+      .progress{
+         height: 3px;
+         background: rgba(255, 255, 255, 0.38);
+         overflow: visible;
+         background: $border-color;
+         .progress-bar{
+            background: $theme-color-2;
+            position: relative;
+            overflow: visible!important;
+            transition: none!important;
+            &:after{
+               content: '';
+               width: 9px;
+               height: 9px;
+               border-radius: 50%;
+               background: $theme-color-2;
+               position: absolute;
+               right: 0;
+               top: -3px;
+               z-index: 1;
+            }
+         }
+      }
+   }
+   &__raised{
+      font-size: 14px;
+      font-weight: 500;
+      color: $body-color;
+      margin-bottom: 5px;
+      display: flex;
+      justify-content: space-between;
+   }
+   &__raised-total{
+
+   }
+   &__percent-raised{
+      color: $theme-color-2;
+   }
+   &__goal{
+      font-weight: 600;
+      margin-top: 5px;
+      font-size: 14px;
+   }
+   &__goal-label{
+      color: $black;
+   }
+   &__goal-value{
+      color: $theme-color;
+   }
+   &__bottom{
+      padding: 15px 0 15px;
+      margin-top: 15px;
+      border-top: 1px solid $border-color;
+   }
+   &__bottom-content{
+      display: flex;
+      justify-content: space-between;
+   }
+   &__time-remaining{
+      display: inline-block;
+      font-size: 13px;
+      font-weight: 500;
+      color: $body-color;
+      .campaign-time-remaining{
+         position: relative;
+         padding-left: 20px;
+         &:after{
+            content: '\f017';
+            font-family: $font-icon-awesome;
+            color: $theme-color;
+            font-size: 14px;
+            line-height: 22px;
+            position: absolute;
+            top: 3px;
+            left: 0;
+            z-index: 1;
+         }
+      }
+   }
+   &__link-content{
+      position: relative;
+      padding-right: 15px;
+      font-size: 14px;
+      font-weight: 500;
+      color: $theme-color;
+      &:after{
+         content: '\f061';
+         font-family: $font-icon-awesome;
+         position: absolute;
+         top: 5px;
+         right: 0;
+         font-size: 10px;
+         z-index: 1;
+         line-height: 1;
+         font-weight: 900;
+      }
+   }
+   &__single{
+      &:hover{
+         .campaign-three__overlay{
+            opacity: 0.2;
+         }
+      }
+   }
+}
+.woocommerce-account{
+     #wp-content{
+      background: #F5F7FA;
+   }
+}
+.woocommerce-ResetPassword, .woo-login-form, .woo-register-form, .woocommerce-form-coupon{
+   max-width: 750px;
+   border: 1px solid rgba(0, 0, 0, 0.08);
+   background: #ffffff;
+   border-radius: 4px;
+   box-shadow: 0px 0px 60px rgba(0, 0, 0, 0.1);
+   padding: 50px;
+   margin: 60px auto;
+   @include media-breakpoint-down(lg){
+      padding: 30px;
+   }
+}
+.woocommerce .woocommerce-form-login{
+   .form-row{
+      .woocommerce-form-login__rememberme{
+         display: inline-block;
+         width: auto;
+         -webkit-box-ordinal-group: 3;
+         -ms-flex-order: 2;
+         order: 2;
+      }
+      .woocommerce-form-login__submit{
+         float: left;
+         margin-right: 15px;
+         -webkit-box-ordinal-group: 2;
+         -ms-flex-order: 1;
+         order: 1;
+      }
+   }
+}
+
+.woocommerce form{
+   .form-row label, .woocommerce-page form .form-row label{
+      display: block;
+      width: 100%;
+   }
+   .password-input{
+      width: 100%;
+      display: block;
+      position: relative;
+      .show-password-input{
+         position: absolute;
+         right: 10px;
+         top: 5px;
+         cursor: pointer;
+         &:after{
+            font-family: $font-icon-awesome;
+            font-weight: 400;
+            content: "\f06e";
+            text-decoration: none;
+         }
+      }
+   }
+   .form-row input.input-text, .woocommerce form .form-row textarea{
+      width: 100%;
+   }
+}
+
+.woocommerce-ResetPassword.lost_reset_password{
+   @include clearfix();
+   .woocommerce-form-row{
+      width: 100%;
+      display: block;
+      margin: 0 0 25px;
+      label{
+         margin-bottom: 2px;
+      }
+   }
+}  
+
+.wfc-dashboard-login{
+   .woocommerce-info{
+      max-width: 680px;
+      margin: 0 auto;
+      font-weight: 400;
+   }
+}
+.wpneoShowLogin{
+   display: none!important;
+}
+.wpneo_login_form_div{
+   max-width: 680px;
+   border: 1px solid rgba(0, 0, 0, 0.08);
+   background: #ffffff;
+   border-radius: 4px;
+   box-shadow: 0px 0px 60px rgba(0, 0, 0, 0.1);
+   padding: 30px 40px 15px 40px;
+   margin: 30px auto;
+   display: block!important;
+   @include media-breakpoint-down(lg){
+      padding: 30px 30px 15px 30px;
+   }
+   label{
+      color: $black;
+      font-weight: 400;
+   }
+   label, .login-username input, .login-password input{
+      display: block;
+      width: 100%;
+   }
+}
+
+#wpneofrontenddata{
+   .wpneo-form-action{
+      position: relative;
+      &:after{
+         content: '';
+         @include size(100%, 110%);
+         background: url('#{$image-theme-path-base}preloader.gif') center no-repeat rgba(255, 255, 255, 0.8);
+         position: absolute;
+         top: 0;
+         left: 0;
+         z-index: 11;
+         display: none;
+      }
+      &.loading{
+         &:after{
+            display: block;
+         }
+      }
+   }
+}
+
+.wc-credit-card-form .form-row > *{width: 100%;}
+.wc-credit-card-form .form-row label{margin:0!important;}
+
+.wpcf-message-content.wpcf-wallet-withdraw{
+   margin-top: 120px;
+   height: 420px;
+   .wpcf-withdraw-button{
+      background: $theme-color;
+      color: $white;
+      border: none;
+      padding: 5px 15px;
+      border-radius: 5px;
+      display: inline-block;
+   }
+}
+
+.cf-single-content-only{
+   padding: 80px 0;
+   .campaign-single-right{
+      padding-left: 35px;
+      @media(max-width: 1200px){
+         padding-left: 0;
+      }
+      .wpneo-campaign-title{
+         font-size: 28px;
+         margin: 25px 0 30px;
+         line-height: 32px;
+      }
+      .cf-creator-info{
+         margin-bottom: 35px;
+      }
+      .campaign-info{
+         margin-bottom: 30px;
+      }
+      .cf-item-progress{
+         margin: 0 0 25px;
+      }
+   }
+   .campaign-single-left{
+      .cf-item-short-story{
+         margin-top: 35px;
+      }
+   }
+   .campaign-bottom{
+      margin-top: 60px;
+   }
+}

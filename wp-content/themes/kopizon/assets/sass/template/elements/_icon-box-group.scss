@@ -1,0 +1,520 @@
+.gsc-icon-box-group .icon-box-item{
+	width: 100%;
+}
+//Item One
+.iconbox-one{
+	&__single{
+		border: 1px solid rgba(0,0,0,0.05);
+		padding: 30px;
+		margin: 10px 0 30px;
+		box-shadow: 6px 5px 15px 0px rgba(0, 0, 0, 0.06);
+		position: relative;
+		width: 100%;
+		background: $white;
+		z-index: 9;
+		@media(max-width: 1024px){
+			padding: 30px 20px;
+		}
+		&:after{
+			content: '';
+         background: $theme-color;
+			position: absolute;
+			top: -1px;
+			left: -1px;
+			right: -1px;
+			bottom: 100%;
+			z-index: -1;
+			transition: all 0.5s;
+			opacity: 0;
+		}
+	}
+	&__icon{
+		margin: 30px 0 25px;
+		i{
+			font-size: 56px;
+			color: $theme-color;
+			transition: all 0.5s;
+		}
+		svg{
+			width: 56px;
+			fill: $theme-color;
+			transition: all 0.5s;
+		}
+	}
+	&__title{
+		font-size: 18px;
+		margin: 0;
+		transition: all 0.5s;
+	}
+	&__desc{
+		font-size: 14px;
+		letter-spacing: -0.5s;
+		color: $black;
+		font-weight: 400;
+		position: relative;
+		line-height: 20px;
+		margin-top: 15px;
+		padding-top: 15px;
+		transition: all 0.5s;
+		&:after{
+			content: '';
+	    	width: 20px;
+	    	height: 2px;
+	    	background: $black;
+	    	position: absolute;
+	    	top: 0;
+	    	left: 0;
+	    	z-index: 1;
+	    	transition: all 0.35s;
+	   }
+	}
+	&__link-overlay{
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: 11;
+	}
+	&__single{ 
+		&:hover, &:focus, &.active{ 
+			&:after{
+				bottom: -1px;
+				opacity: 1;
+			}
+			.iconbox-one{
+				&__title{
+					color: $white;
+				}
+				&__icon{
+					i{
+						color: $white;
+					}
+					svg{
+						fill: $white;
+					}
+				}
+				&__desc{
+					color: $white;
+					&:after{
+						width: 50px;
+						background: $white;
+					}	
+				}
+			}
+		}
+	}
+}
+
+.item-active.center{
+ 	.iconbox-one{
+ 		&__single:after{
+			opacity: 1;
+			bottom: -1px;
+ 		}
+ 		&__title{
+			color: $white;
+		}
+		&__icon{
+			i{
+				color: $white;
+			}
+			svg{
+				fill: $white;
+			}
+		}
+		&__desc{
+			color: $white;
+			&:after{
+				width: 50px;
+				background: $white;
+			}	
+		}
+ 	}
+}
+
+// Item Two
+.iconbox-two{
+	&__single{
+		border: 1px solid rgba(0,0,0,0.05);
+		padding: 20px 20px 25px 30px;
+		margin: 0 0 30px;
+		position: relative;
+		background: $white;
+		z-index: 9; 
+		@media(max-width: 1024px){
+			padding: 30px 18px;
+		}
+	}
+	&__content{
+	
+	}
+	&__content-inner{
+
+	}
+	&__icon-wrap{
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+	&__number{
+		font-size: 30px;
+		color: #d6dee1;
+	}
+	&__icon{
+		flex: 0 0 68px;
+		width: 68px;
+		height: 68px;
+		border-radius: 50%;
+		background: $bg-gray;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		i{
+			font-size: 28px;
+			color: $theme-color;
+			transition: all 0.5s;
+		}
+		svg{
+			width: 28px;
+			fill: $theme-color;
+			transition: all 0.5s;
+		}
+	}
+	&__title{
+		font-size: 18px;
+		margin: 6px 0 5px;
+	}
+	&__desc{
+		position: relative;
+		line-height: 24px;
+	}
+	&__link-overlay{
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: 11;
+	}
+	&__single{ 
+		&:hover, &:focus, &.active{ 
+			.iconbox-two{
+				&__icon{
+					background: $theme-color;
+					i{
+						color: $white;
+					}
+					svg{
+						fill: $white;
+					}
+				}
+			}
+		}
+	}
+}
+
+.item-active.center{
+	.iconbox-two{
+		&__icon{
+			background: $theme-color;
+			i{
+				color: $white;
+			}
+			svg{
+				fill: $white;
+			}
+		}
+	}
+}
+
+// Item Three
+.iconbox-three{
+	&__single{
+		margin: 0 0 30px;
+		position: relative;
+		width: 100%;
+		z-index: 9;
+		border: 1px solid $border-color;
+		padding: 30px 15px;
+		text-align: center;
+	}
+	&__icon{
+		margin: 0 0 25px;
+		width: 70px;
+		height: 70px;
+		border-radius: 50%;
+		background: #171720;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		margin: 0 auto;
+		transition: all 0.35s;
+		i{
+			font-size: 32px;
+			color: $theme-color;
+			transition: all 0.5s;
+		}
+		svg{
+			width: 56px;
+			fill: $theme-color;
+			transition: all 0.5s;
+		}
+	}
+	&__title{
+		font-size: 18px;
+		margin: 25px 0 0;
+		transition: all 0.5s;
+	}
+	&__desc{
+		font-size: 14px;
+		color: $black;
+		font-weight: 400;
+		position: relative;
+		line-height: 20px;
+		margin-top: 15px;
+		padding-top: 15px;
+		transition: all 0.5s;
+		&:after{
+			content: '';
+	    	width: 20px;
+	    	height: 2px;
+	    	background: $black;
+	    	position: absolute;
+	    	top: 0;
+	    	left: 50%;
+	    	margin-left: -10px;
+	    	z-index: 1;
+	    	transition: all 0.35s;
+	   }
+	}
+	&__link-overlay{
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: 11;
+	}
+	&__single{ 
+		&:hover, &:focus, &.active{ 
+			.iconbox-three{
+				&__icon{
+					background: $theme-color;
+					i{
+						color: $white;
+					}
+					svg{
+						fill: $white;
+					}
+				}
+			}
+		}
+	}
+}
+
+.item-active.center{
+	.iconbox-three{
+		&__icon{
+			background: $theme-color;
+			i{
+				color: $white;
+			}
+			svg{
+				fill: $white;
+			}
+		}
+	}
+}
+
+// Item Four
+.iconbox-four{
+	&__single{
+		border: 1px solid $border-color;
+		padding: 20px 20px 25px 30px;
+		margin: 0 0 16px;
+		position: relative;
+		background: $white;
+		z-index: 9; 
+		@media(max-width: 1024px){
+			padding: 30px 18px;
+		}
+	}
+	&__wrap{
+		display: flex;
+		align-items: center;
+	}
+	
+	&__icon{
+		flex: 0 0 70px;
+		width: 70px;
+		height: 70px;
+		border-radius: 50%;
+		background: $bg-gray;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		i{
+			font-size: 32px;
+			color: $theme-color;
+			transition: all 0.5s;
+		}
+		svg{
+			width: 32px;
+			fill: $theme-color;
+			transition: all 0.5s;
+		}
+	}
+	&__content{
+		padding-left: 20px;
+		flex: 0 0 calc(100% - 70px);
+		width: calc(100% - 70px);
+	}
+	&__title{
+		font-size: 18px;
+		margin: 0 0 4px;
+	}
+	&__desc{
+		position: relative;
+		line-height: 22px;
+		font-size: 14px;
+		font-weight: 400;
+	}
+	&__link-overlay{
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: 11;
+	}
+	&__single{ 
+		&:hover, &:focus, &.active{ 
+			.iconbox-four{
+				&__icon{
+					background: $theme-color;
+					i{
+						color: $white;
+					}
+					svg{
+						fill: $white;
+					}
+				}
+			}
+		}
+	} 
+} 
+
+.item-active.center{
+	.iconbox-four{
+		&__icon{
+			background: $theme-color;
+			i{
+				color: $white;
+			}
+			svg{
+				fill: $white;
+			}
+		}
+	}
+}
+
+// Item Five
+.iconbox-five{
+	&__single{
+		border: 1px solid rgba(0,0,0,0.05);
+		padding: 20px 20px 25px 30px;
+		margin: 0 0 30px;
+		position: relative;
+		background: $white;
+		z-index: 9; 
+		@media(max-width: 1024px){
+			padding: 30px 18px;
+		}
+	}
+	&__content{
+	
+	}
+	&__content-inner{
+
+	}
+	&__icon-wrap{
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+	&__number{
+		font-size: 30px;
+		color: #d6dee1;
+	}
+	&__icon{
+		flex: 0 0 68px;
+		width: 68px;
+		height: 68px;
+		border-radius: 50%;
+		background: $bg-gray;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		i{
+			font-size: 28px;
+			color: $theme-color;
+			transition: all 0.5s;
+		}
+		svg{
+			width: 28px;
+			fill: $theme-color;
+			transition: all 0.5s;
+		}
+	}
+	&__content-inner{
+		padding-top: 25px;
+	}
+	&__title{
+		font-size: 18px;
+		margin: 0 0 5px;
+	}
+	&__desc{
+		position: relative;
+		line-height: 22px;
+		margin-top: 12px;
+		font-size: 15px;
+	}
+	&__link-overlay{
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: 11;
+	}
+	&__single{ 
+		&:hover, &:focus, &.active{ 
+			.iconbox-five{
+				&__icon{
+					background: $theme-color;
+					i{
+						color: $white;
+					}
+					svg{
+						fill: $white;
+					}
+				}
+			}
+		}
+	}
+}
+
+.item-active.center{
+	.iconbox-five{
+		&__icon{
+			background: $theme-color;
+			i{
+				color: $white;
+			}
+			svg{
+				fill: $white;
+			}
+		}
+	}
+}
