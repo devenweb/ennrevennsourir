@@ -70,10 +70,19 @@ a { transition: var(--transition); }
 }
 
 /* ─── Navigation Bar (Pink) ──────────────────────────────── */
-/* FIX: The duplicated menu is caused by Elementor showing both
-   desktop and mobile menus simultaneously. We hide the duplicate. */
-.elementor-nav-menu--layout-horizontal ~ .elementor-nav-menu--layout-horizontal,
-.elementor-nav-menu-container + .elementor-nav-menu-container {
+/* FIX: Polylang + Elementor both render the menu — hide duplicates.
+   Polylang mirrors the menu for each language; the second set gets hidden. */
+.elementor-nav-menu--main .elementor-nav-menu:not(:first-child) {
+    display: none !important;
+}
+
+/* Elementor mobile toggle duplicate */
+.elementor-nav-menu--layout-horizontal + .elementor-nav-menu--layout-horizontal {
+    display: none !important;
+}
+
+/* Hide the second Elementor nav widget if two are stacked */
+.elementor-widget-nav-menu ~ .elementor-widget-nav-menu {
     display: none !important;
 }
 

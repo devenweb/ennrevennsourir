@@ -665,18 +665,17 @@ if (!function_exists('ennrev_precision_header_fix')) {
                 display: block !important;
             }
 
-            /* 3. MOBILE ADAPTATION */
-            @media (max-width: 767px) {
-                .elementor-50 .elementor-element.elementor-element-1046487 {
-                    margin: 0 !important;
-                    width: 100% !important;
-                    max-width: 100% !important;
-                }
-                
-                .elementor-50 .elementor-element.elementor-element-1046487 > .elementor-container {
-                    flex-direction: column !important;
-                    flex-wrap: wrap !important;
-                }
+            /* 4. DUPLICATE NAV FIX
+               Two Elementor nav-menu widgets are stacked in the header.
+               The first (26ca28c) is desktop. The second (bfcdbd3) is
+               a Polylang-generated duplicate — hide it on desktop. */
+            .elementor-element-bfcdbd3 {
+                display: none !important;
+            }
+
+            /* Also hide any second elementor-widget-nav-menu in the header */
+            [data-elementor-type="header"] .elementor-widget-nav-menu + .elementor-widget-nav-menu {
+                display: none !important;
             }
         </style>
         <?php
