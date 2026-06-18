@@ -23,18 +23,50 @@ define('HELLO_ELEMENTOR_CHILD_VERSION', '2.0.0');
  */
 function hello_elementor_child_scripts_styles()
 {
+    // Google Font: Outfit (primary brand font)
+    wp_enqueue_style(
+        'ennrev-outfit-font',
+        'https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600&display=swap',
+        [],
+        null
+    );
 
 	wp_enqueue_style(
 		'hello-elementor-child-style',
 		get_stylesheet_directory_uri() . '/style.css',
 		[
 			'hello-elementor-theme-style',
+            'ennrev-outfit-font',
 		],
 		HELLO_ELEMENTOR_CHILD_VERSION
 	);
 
+    // Premium JS: highlight selected predefined donation button
+    $premium_js = "
+    document.addEventListener('DOMContentLoaded', function() {
+        // Predefined pledge amount active state
+        var pledgeBtns = document.querySelectorAll('.wpcf_predefined_pledge_amount a');
+        var donateInput = document.querySelector('.wpneo_donate_amount_field');
+        pledgeBtns.forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                pledgeBtns.forEach(function(b){ b.classList.remove('selected'); });
+                btn.classList.add('selected');
+            });
+        });
+
+        // Animate progress bars on page load
+        var bars = document.querySelectorAll('#neo-progressbar > div, .wpneo-progress-percent');
+        bars.forEach(function(bar) {
+            var width = bar.style.width;
+            bar.style.width = '0';
+            setTimeout(function() { bar.style.width = width; }, 300);
+        });
+    });
+    ";
+    wp_add_inline_script( 'jquery', $premium_js );
 }
 add_action('wp_enqueue_scripts', 'hello_elementor_child_scripts_styles', 20);
+
 
 
 

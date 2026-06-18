@@ -12,162 +12,720 @@ License URI: https://www.gnu.org/licenses/gpl-3.0.html
 Tags: flexible-header, custom-colors, custom-menu, custom-logo, editor-style, featured-images, rtl-language-support, threaded-comments, translation-ready
 */
 
+/* ============================================================
+   ENN REV ENN SOURIR — Premium Design System v2.0
+   ============================================================ */
 
-/* --- LATEST UI UPGRADE (MODERN & PREMIUM) --- */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600&display=swap');
 
-
-
+/* ─── Design Tokens ──────────────────────────────────────── */
 :root {
-    --ennrev-pink: #e91e63;
-    --ennrev-pink-deep: #c2185b;
-    --ennrev-pink-glow: rgba(233, 30, 99, 0.3);
-    --ennrev-shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.05);
-    --ennrev-shadow-medium: 0 12px 30px rgba(0, 0, 0, 0.1);
-    --ennrev-glass: rgba(255, 255, 255, 0.85);
-    --ennrev-radius: 16px;
+    --pink:           #e91e63;
+    --pink-deep:      #c2185b;
+    --pink-light:     #fce4ec;
+    --pink-glow:      rgba(233, 30, 99, 0.25);
+    --pink-glow-lg:   rgba(233, 30, 99, 0.15);
+    --navy:           #0d1b2a;
+    --navy-mid:       #1a2d42;
+    --bg:             #f8f9fc;
+    --white:          #ffffff;
+    --text:           #1a1a2e;
+    --text-muted:     #6b7280;
+    --border:         rgba(0,0,0,0.06);
+    --radius-sm:      8px;
+    --radius:         16px;
+    --radius-lg:      24px;
+    --shadow-xs:      0 1px 3px rgba(0,0,0,0.04), 0 1px 2px rgba(0,0,0,0.06);
+    --shadow-sm:      0 4px 16px rgba(0,0,0,0.06);
+    --shadow-md:      0 12px 32px rgba(0,0,0,0.10);
+    --shadow-lg:      0 24px 48px rgba(0,0,0,0.14);
+    --transition:     all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* 1. Global Modernization */
+/* ─── Global Reset & Typography ─────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; }
+
 body {
-    font-family: 'Outfit', 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
-    background-color: #fbfbfc !important;
-    color: #333 !important;
+    font-family: 'Outfit', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
+    background: var(--bg) !important;
+    color: var(--text) !important;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
-/* 2. Compact Glassmorphism Header */
-.site-header,
-.elementor-location-header {
-    background: var(--ennrev-glass) !important;
-    backdrop-filter: blur(15px) !important;
-    -webkit-backdrop-filter: blur(15px) !important;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.05) !important;
-    position: sticky !important;
-    top: 0;
-    z-index: 1000;
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Outfit', sans-serif !important;
+    letter-spacing: -0.02em;
 }
 
-/* 2.1 Top Bar Height Refinement (Compact Pink Bar) */
-.header-top-bar,
-.elementor-section.elementor-top-column,
+a { transition: var(--transition); }
+
+/* ─── Top Header Bar ─────────────────────────────────────── */
+/* The white bar with logo + contact + social */
+.elementor-location-header > .elementor-section:first-child,
 [data-elementor-type="header"] .elementor-section:first-child {
-    padding-top: 4px !important;
-    padding-bottom: 4px !important;
-    min-height: auto !important;
+    background: var(--white) !important;
+    border-bottom: 1px solid var(--border) !important;
+    padding: 8px 0 !important;
 }
 
-.header-top-bar .elementor-container {
-    min-height: auto !important;
+/* ─── Navigation Bar (Pink) ──────────────────────────────── */
+/* FIX: The duplicated menu is caused by Elementor showing both
+   desktop and mobile menus simultaneously. We hide the duplicate. */
+.elementor-nav-menu--layout-horizontal ~ .elementor-nav-menu--layout-horizontal,
+.elementor-nav-menu-container + .elementor-nav-menu-container {
+    display: none !important;
 }
 
-.elementor-nav-menu--main .elementor-item {
-    padding: 12px 20px !important;
+.elementor-nav-menu--main,
+[data-elementor-type="header"] nav {
+    background: var(--pink) !important;
+}
+
+/* Sticky header */
+.elementor-location-header {
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 9999 !important;
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
+}
+
+/* Nav items */
+.elementor-nav-menu--main .elementor-item,
+[data-elementor-type="header"] .elementor-nav-menu .elementor-item {
+    color: rgba(255,255,255,0.92) !important;
     font-weight: 600 !important;
-    letter-spacing: 0.5px !important;
-    transition: all 0.3s ease !important;
+    font-size: 14px !important;
+    letter-spacing: 0.3px !important;
+    padding: 10px 16px !important;
+    border-radius: var(--radius-sm) !important;
+    transition: var(--transition) !important;
+    position: relative !important;
 }
 
-.elementor-nav-menu--main .elementor-item:hover {
-    color: var(--ennrev-pink) !important;
-    background: rgba(233, 30, 99, 0.05) !important;
-    border-radius: 8px !important;
+.elementor-nav-menu--main .elementor-item:hover,
+.elementor-nav-menu--main .elementor-item.elementor-item-active {
+    color: #fff !important;
+    background: rgba(255,255,255,0.15) !important;
 }
 
-/* 3. Advanced Campaign Cards */
-.campaign-item,
-.wpneo-listing-content,
-.wpcf-responsive-grid .campaign-item {
-    background: #fff !important;
-    border-radius: var(--ennrev-radius) !important;
-    box-shadow: var(--ennrev-shadow-soft) !important;
-    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
-    overflow: hidden !important;
-    border: 1px solid rgba(0, 0, 0, 0.02) !important;
-    display: flex;
-    flex-direction: column;
-}
-
-.campaign-item:hover {
-    transform: translateY(-8px) scale(1.01) !important;
-    box-shadow: var(--ennrev-shadow-medium) !important;
-}
-
-.campaign-item img,
-.wpneo-listing-img img {
-    border-radius: var(--ennrev-radius) var(--ennrev-radius) 0 0 !important;
-    transition: transform 0.6s ease !important;
-}
-
-.campaign-item:hover img {
-    transform: scale(1.05) !important;
-}
-
-/* 4. Premium Pink Buttons */
+/* ─── Hero Buttons Fix ───────────────────────────────────── */
+/* "View Projects" was showing blue — force pink brand color */
 .elementor-button,
-.wpneo-btn,
-.wpcf-button,
-.woocommerce button.button.alt,
-.wpneo-edit-btn,
-.wpcf-btn-primary {
-    background: var(--ennrev-pink) !important;
+.elementor-button-wrapper .elementor-button,
+a.elementor-button {
+    background: var(--pink) !important;
     color: #fff !important;
     border: none !important;
-    padding: 14px 28px !important;
-    font-weight: 600 !important;
     border-radius: 50px !important;
-    box-shadow: 0 4px 15px var(--ennrev-pink-glow) !important;
-    transition: all 0.3s ease !important;
+    padding: 14px 32px !important;
+    font-weight: 700 !important;
+    font-size: 15px !important;
+    letter-spacing: 0.3px !important;
+    box-shadow: 0 4px 20px var(--pink-glow) !important;
+    transition: var(--transition) !important;
+    text-decoration: none !important;
 }
 
 .elementor-button:hover,
-.wpneo-btn:hover,
-.woocommerce button.button.alt:hover,
-.wpcf-btn-primary:hover {
-    background: var(--ennrev-pink-deep) !important;
-    box-shadow: 0 6px 20px var(--ennrev-pink-glow) !important;
+a.elementor-button:hover {
+    background: var(--pink-deep) !important;
+    box-shadow: 0 8px 28px var(--pink-glow) !important;
+    transform: translateY(-2px) !important;
+    color: #fff !important;
+}
+
+/* Ghost / outline variant */
+.elementor-button.elementor-button-link,
+.elementor-button[style*="background: transparent"],
+.elementor-button[style*="background:transparent"] {
+    background: transparent !important;
+    border: 2px solid rgba(255,255,255,0.8) !important;
+    color: #fff !important;
+    box-shadow: none !important;
+}
+
+.elementor-button.elementor-button-link:hover {
+    background: rgba(255,255,255,0.15) !important;
+    border-color: #fff !important;
+}
+
+/* ─── Campaign Cards (Listing Page) ─────────────────────── */
+/* Fix: campaign cards had no progress bars and basic WC layout */
+
+/* Card wrapper */
+.wpneo-listings,
+.wpneo-listing-content,
+ul.products li.product {
+    background: var(--white) !important;
+    border-radius: var(--radius) !important;
+    box-shadow: var(--shadow-sm) !important;
+    border: 1px solid var(--border) !important;
+    overflow: hidden !important;
+    transition: var(--transition) !important;
+}
+
+.wpneo-listings:hover,
+ul.products li.product:hover {
+    transform: translateY(-6px) !important;
+    box-shadow: var(--shadow-md) !important;
+}
+
+/* Card image */
+.wpneo-listing-img,
+ul.products li.product .attachment-woocommerce_thumbnail {
+    border-radius: var(--radius) var(--radius) 0 0 !important;
+    overflow: hidden !important;
+    display: block !important;
+    width: 100% !important;
+    aspect-ratio: 16/10;
+    object-fit: cover !important;
+}
+
+.wpneo-listings:hover .wpneo-listing-img img {
+    transform: scale(1.04) !important;
+    transition: transform 0.5s ease !important;
+}
+
+/* Card title */
+.wpneo-listing-content h4 a,
+ul.products li.product .woocommerce-loop-product__title {
+    font-family: 'Outfit', sans-serif !important;
+    font-size: 17px !important;
+    font-weight: 700 !important;
+    color: var(--text) !important;
+    line-height: 1.35 !important;
+    text-decoration: none !important;
+    display: block !important;
+    padding: 16px 20px 6px !important;
+    margin: 0 !important;
+}
+
+/* Funding stats on card */
+.wpneo-funding-data {
+    padding: 0 20px 8px !important;
+}
+
+.wpneo-fund-raised,
+.wpneo-funding-goal,
+.wpneo-time-remaining {
+    padding: 10px 0 !important;
+}
+
+.wpneo-fund-raised .wpneo-meta-name,
+.wpneo-funding-goal .wpneo-meta-name,
+.wpneo-time-remaining .wpneo-meta-name {
+    font-size: 11px !important;
+    font-weight: 500 !important;
+    letter-spacing: 0.5px !important;
+    text-transform: uppercase !important;
+    color: var(--text-muted) !important;
+    display: block !important;
+}
+
+.wpneo-fund-raised .wpneo-meta-desc,
+.wpneo-funding-goal .wpneo-meta-desc,
+.wpneo-time-remaining .wpneo-meta-desc {
+    font-size: 16px !important;
+    font-weight: 700 !important;
+    color: var(--text) !important;
+    display: block !important;
+}
+
+/* Listing metas border */
+.wpneo-listing-metas {
+    border-color: var(--border) !important;
+    margin-top: 8px !important;
+    padding: 10px 0 8px !important;
+}
+
+/* Author on card */
+.wpneo-listing-content p.wpneo-author,
+.wpneo-listing-content .wpneo-author {
+    font-size: 13px !important;
+    color: var(--text-muted) !important;
+    padding: 0 20px 12px !important;
+    margin: 0 !important;
+}
+
+/* "Lire la suite" / "Read more" button on cards */
+a.woocommerce-loop-product__link,
+.woocommerce-loop-product__link,
+ul.products li.product a.button,
+.wpneo-listing-buttons a,
+.wpneo-listing-buttons a.btn-details {
+    display: block !important;
+    margin: 0 16px 16px !important;
+    padding: 12px 20px !important;
+    text-align: center !important;
+    background: var(--pink) !important;
+    color: #fff !important;
+    border-radius: 50px !important;
+    font-weight: 700 !important;
+    font-size: 14px !important;
+    text-decoration: none !important;
+    border: none !important;
+    box-shadow: 0 3px 12px var(--pink-glow) !important;
+    transition: var(--transition) !important;
+}
+
+.wpneo-listing-buttons a:hover,
+ul.products li.product a.button:hover {
+    background: var(--pink-deep) !important;
+    transform: translateY(-1px) !important;
+}
+
+/* ─── Progress Bar (Cards & Single) ─────────────────────── */
+#neo-progressbar,
+.wpneo-progress-bar {
+    height: 8px !important;
+    background: #f0f0f4 !important;
+    border-radius: 20px !important;
+    overflow: hidden !important;
+    margin: 10px 20px !important;
+}
+
+#neo-progressbar > div,
+.wpneo-progress-percent {
+    height: 100% !important;
+    background: linear-gradient(90deg, var(--pink), #ff6090) !important;
+    border-radius: 20px !important;
+    box-shadow: 0 0 8px var(--pink-glow) !important;
+    transition: width 1s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    min-width: 4px !important;
+}
+
+/* Raised percent label */
+.wpneo-raised-percent {
+    padding: 12px 20px 4px !important;
+    border-top: 1px solid var(--border) !important;
+}
+
+.wpneo-raised-percent .wpneo-meta-name {
+    font-size: 11px !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+    color: var(--text-muted) !important;
+    font-weight: 500 !important;
+    margin-left: 0 !important;
+}
+
+.wpneo-raised-percent .wpneo-meta-desc {
+    color: var(--pink) !important;
+    font-weight: 800 !important;
+    font-size: 18px !important;
+}
+
+.wpneo-raised-bar {
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+/* ─── Single Campaign Page ───────────────────────────────── */
+
+/* Campaign title */
+h2.wpneo-campaign-title,
+.wpneo-post-header h2 {
+    font-size: 28px !important;
+    font-weight: 800 !important;
+    line-height: 1.25 !important;
+    color: var(--text) !important;
+    margin-bottom: 8px !important;
+    letter-spacing: -0.03em !important;
+}
+
+/* Sidebar stats panel */
+.wpneo-single-sidebar {
+    background: var(--white) !important;
+    border-radius: var(--radius) !important;
+    padding: 24px !important;
+    box-shadow: var(--shadow-sm) !important;
+    border: 1px solid var(--border) !important;
+    margin-bottom: 24px !important;
+}
+
+/* Campaign funding info grid (Goal / Raised / Days / Method) */
+.campaign-funding-info {
+    background: var(--white) !important;
+    border-radius: var(--radius) !important;
+    padding: 20px !important;
+    margin: 20px 0 !important;
+    box-shadow: var(--shadow-xs) !important;
+    border: 1px solid var(--border) !important;
+}
+
+.campaign-funding-info ul {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)) !important;
+    gap: 16px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    list-style: none !important;
+}
+
+.campaign-funding-info ul li {
+    text-align: center !important;
+    padding: 12px 8px !important;
+    border-radius: var(--radius-sm) !important;
+    background: var(--bg) !important;
+    border: 1px solid var(--border) !important;
+    display: block !important;
+    margin: 0 !important;
+}
+
+.campaign-funding-info ul li .funding-amount {
+    font-size: 18px !important;
+    font-weight: 800 !important;
+    color: var(--pink) !important;
+    margin: 0 0 4px !important;
+    line-height: 1.2 !important;
+    display: block !important;
+}
+
+.campaign-funding-info ul li .info-text {
+    font-size: 11px !important;
+    color: var(--text-muted) !important;
+    font-weight: 500 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+    display: block !important;
+}
+
+/* ─── Predefined Donation Buttons ────────────────────────── */
+/* Fix: plain bordered boxes → premium pill buttons */
+ul.wpcf_predefined_pledge_amount {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 10px !important;
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 16px 0 !important;
+}
+
+ul.wpcf_predefined_pledge_amount li {
+    margin: 0 !important;
+}
+
+ul.wpcf_predefined_pledge_amount li a {
+    display: inline-block !important;
+    padding: 10px 20px !important;
+    background: var(--pink-light) !important;
+    color: var(--pink) !important;
+    border: 2px solid var(--pink) !important;
+    border-radius: 50px !important;
+    font-weight: 700 !important;
+    font-size: 14px !important;
+    text-decoration: none !important;
+    transition: var(--transition) !important;
+    cursor: pointer !important;
+}
+
+ul.wpcf_predefined_pledge_amount li a:hover,
+ul.wpcf_predefined_pledge_amount li a.active,
+ul.wpcf_predefined_pledge_amount li a.selected {
+    background: var(--pink) !important;
+    color: #fff !important;
+    box-shadow: 0 4px 14px var(--pink-glow) !important;
+    transform: translateY(-1px) !important;
+}
+
+/* ─── Donation Amount Input ──────────────────────────────── */
+input.wpneo_donate_amount_field,
+input[type="number"].wpneo_donate_amount_field {
+    border: 2px solid var(--border) !important;
+    border-radius: var(--radius-sm) !important;
+    padding: 12px 16px !important;
+    font-size: 18px !important;
+    font-weight: 700 !important;
+    font-family: 'Outfit', sans-serif !important;
+    color: var(--text) !important;
+    background: var(--white) !important;
+    max-width: 160px !important;
+    transition: var(--transition) !important;
+    display: inline-block !important;
+}
+
+input.wpneo_donate_amount_field:focus {
+    border-color: var(--pink) !important;
+    outline: none !important;
+    box-shadow: 0 0 0 3px var(--pink-glow) !important;
+}
+
+/* ─── "Donate / Soutenir la campagne" Button ─────────────── */
+button.wpneo_donate_button,
+.wpneo_donate_button,
+button[class*="wpneo_donate"] {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important;
+    background: linear-gradient(135deg, var(--pink), #ff6090) !important;
+    color: #fff !important;
+    border: none !important;
+    border-radius: 50px !important;
+    padding: 14px 32px !important;
+    font-size: 16px !important;
+    font-weight: 700 !important;
+    font-family: 'Outfit', sans-serif !important;
+    cursor: pointer !important;
+    box-shadow: 0 4px 20px var(--pink-glow) !important;
+    transition: var(--transition) !important;
+    margin-left: 12px !important;
+    text-transform: none !important;
+}
+
+button.wpneo_donate_button:hover {
+    background: linear-gradient(135deg, var(--pink-deep), var(--pink)) !important;
+    box-shadow: 0 8px 28px var(--pink-glow) !important;
     transform: translateY(-2px) !important;
 }
 
-/* 5. Modern Pink Progress Bars */
-.wpneo-progress-bar {
-    height: 10px !important;
-    background-color: #f0f0f0 !important;
-    border-radius: 20px !important;
-    margin: 15px 0 !important;
-    overflow: hidden;
+/* ─── WooCommerce Donate Form Row ───────────────────────── */
+form.cart.AA {
+    display: flex !important;
+    align-items: center !important;
+    flex-wrap: wrap !important;
+    gap: 10px !important;
+    margin-top: 16px !important;
+    background: var(--bg) !important;
+    padding: 16px !important;
+    border-radius: var(--radius-sm) !important;
+    border: 1px solid var(--border) !important;
 }
 
-.wpneo-progress-percent {
-    background: var(--ennrev-pink) !important;
-    border-radius: 20px !important;
-    box-shadow: 0 0 10px var(--ennrev-pink-glow);
+/* Currency symbol next to input */
+form.cart.AA > .woocommerce-Price-currencySymbol,
+form.cart.AA > span:first-of-type {
+    font-size: 18px !important;
+    font-weight: 700 !important;
+    color: var(--pink) !important;
 }
 
-/* 6. Section Spacing */
-.elementor-section {
-    padding-top: 80px !important;
-    padding-bottom: 80px !important;
+/* ─── Author / Creator Info ──────────────────────────────── */
+.wpneo-campaign-creator-info-wrapper {
+    background: var(--white) !important;
+    border-radius: var(--radius) !important;
+    padding: 16px 20px !important;
+    box-shadow: var(--shadow-xs) !important;
+    border: 1px solid var(--border) !important;
+    margin: 16px 0 !important;
 }
 
-/* 7. Scroll Reveal Infrastructure */
-.reveal-on-scroll {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.8s ease-out;
+a.wpneo-fund-modal-btn {
+    color: var(--pink) !important;
+    font-weight: 600 !important;
 }
 
-.reveal-on-scroll.is-visible {
-    opacity: 1;
-    transform: translateY(0);
+/* ─── Social Share Row ───────────────────────────────────── */
+.social-container {
+    gap: 10px !important;
+    margin-top: 16px !important;
 }
 
-/* 8. Mobile Refinements */
+.social-container a {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 36px !important;
+    height: 36px !important;
+    border-radius: 50% !important;
+    background: var(--bg) !important;
+    border: 1px solid var(--border) !important;
+    transition: var(--transition) !important;
+    font-size: 15px !important;
+}
+
+.social-container a:hover {
+    background: var(--pink) !important;
+    border-color: var(--pink) !important;
+    color: #fff !important;
+    transform: translateY(-2px) !important;
+}
+
+/* ─── Tabs (Campaign Story / Updates / Backers) ──────────── */
+.wpneo-tabs-menu {
+    padding: 0 !important;
+    border-bottom: 2px solid var(--border) !important;
+    display: flex !important;
+    gap: 4px !important;
+}
+
+.wpneo-tabs-menu li {
+    padding: 14px 24px !important;
+    border-top: none !important;
+    border-radius: var(--radius-sm) var(--radius-sm) 0 0 !important;
+    transition: var(--transition) !important;
+}
+
+.wpneo-tabs-menu li.active,
+.wpneo-tabs-menu li:hover {
+    background: var(--pink-light) !important;
+}
+
+.wpneo-tabs-menu li a,
+.wpneo-tabs-menu li span {
+    color: var(--text-muted) !important;
+    font-weight: 600 !important;
+    font-size: 14px !important;
+}
+
+.wpneo-tabs-menu li.active a,
+.wpneo-tabs-menu li.active span {
+    color: var(--pink) !important;
+}
+
+/* ─── Tooltip (Min/Max info) ─────────────────────────────── */
+.wpneo-tooltip {
+    display: block !important;
+    background: var(--bg) !important;
+    border: 1px solid var(--border) !important;
+    border-radius: var(--radius-sm) !important;
+    padding: 8px 14px !important;
+    margin-bottom: 12px !important;
+    font-size: 13px !important;
+    color: var(--text-muted) !important;
+}
+
+.wpneo-tooltip-min,
+.wpneo-tooltip-max {
+    display: inline-block !important;
+    margin-right: 16px !important;
+}
+
+/* ─── WooCommerce Add to Cart (Shop page) ───────────────── */
+.woocommerce #respond input#submit,
+.woocommerce a.button,
+.woocommerce button.button,
+.woocommerce input.button,
+.woocommerce button.button.alt {
+    background: var(--pink) !important;
+    color: #fff !important;
+    border-radius: 50px !important;
+    font-weight: 700 !important;
+    padding: 12px 24px !important;
+    border: none !important;
+    box-shadow: 0 3px 12px var(--pink-glow) !important;
+    transition: var(--transition) !important;
+}
+
+.woocommerce button.button:hover,
+.woocommerce button.button.alt:hover,
+.woocommerce a.button:hover {
+    background: var(--pink-deep) !important;
+    box-shadow: 0 6px 20px var(--pink-glow) !important;
+    transform: translateY(-1px) !important;
+}
+
+/* ─── Shop Page Layout ───────────────────────────────────── */
+.woocommerce ul.products {
+    gap: 24px !important;
+}
+
+.woocommerce ul.products li.product {
+    padding: 0 !important;
+    margin: 0 !important;
+    border-radius: var(--radius) !important;
+    overflow: hidden !important;
+    box-shadow: var(--shadow-sm) !important;
+    border: 1px solid var(--border) !important;
+    background: var(--white) !important;
+    transition: var(--transition) !important;
+}
+
+.woocommerce ul.products li.product:hover {
+    transform: translateY(-6px) !important;
+    box-shadow: var(--shadow-md) !important;
+}
+
+.woocommerce ul.products li.product img {
+    width: 100% !important;
+    height: 220px !important;
+    object-fit: cover !important;
+    border-radius: var(--radius) var(--radius) 0 0 !important;
+}
+
+/* ─── Footer Premium Polish ──────────────────────────────── */
+.elementor-location-footer,
+.site-footer {
+    background: var(--navy) !important;
+}
+
+.elementor-location-footer *,
+.site-footer * {
+    font-family: 'Outfit', sans-serif !important;
+}
+
+/* ─── Scroll-to-top & Chatbot ────────────────────────────── */
+/* Chatbot button positioning refinement */
+#launcher,
+[class*="chat-launcher"],
+[class*="chaport"] {
+    bottom: 24px !important;
+    right: 24px !important;
+}
+
+/* ─── Animations ─────────────────────────────────────────── */
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+.wpneo-listing-content,
+.campaign-funding-info,
+.wpneo-single-sidebar {
+    animation: fadeUp 0.5s ease both;
+}
+
+/* Stagger cards */
+ul.products li.product:nth-child(2) { animation-delay: 0.05s; }
+ul.products li.product:nth-child(3) { animation-delay: 0.10s; }
+ul.products li.product:nth-child(4) { animation-delay: 0.15s; }
+ul.products li.product:nth-child(5) { animation-delay: 0.20s; }
+ul.products li.product:nth-child(6) { animation-delay: 0.25s; }
+
+/* ─── Mobile Refinements ─────────────────────────────────── */
 @media (max-width: 768px) {
-    .elementor-section {
-        padding-top: 50px !important;
-        padding-bottom: 50px !important;
+    .campaign-funding-info ul {
+        grid-template-columns: 1fr 1fr !important;
     }
 
-    .campaign-item {
-        margin-bottom: 20px !important;
+    .wpneo-single-sidebar {
+        padding: 16px !important;
+    }
+
+    form.cart.AA {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+    }
+
+    button.wpneo_donate_button {
+        margin-left: 0 !important;
+        width: 100% !important;
+        justify-content: center !important;
+    }
+
+    ul.wpcf_predefined_pledge_amount {
+        gap: 8px !important;
+    }
+
+    h2.wpneo-campaign-title {
+        font-size: 22px !important;
+    }
+
+    .elementor-section {
+        padding-top: 48px !important;
+        padding-bottom: 48px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    ul.wpcf_predefined_pledge_amount li a {
+        padding: 8px 14px !important;
+        font-size: 13px !important;
+    }
+
+    .campaign-funding-info ul li .funding-amount {
+        font-size: 15px !important;
     }
 }
