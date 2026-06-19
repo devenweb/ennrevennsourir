@@ -165,10 +165,46 @@ h6 {
     width: 100% !important;
     padding: 10px 30px !important;
     display: grid !important;
-    grid-template-columns: auto minmax(160px, 1fr) auto auto minmax(280px, auto) auto !important;
-    /* Increased width of social column from 165px to 220px */
+    /* Reduce the gap between logo and search box, and adjust widths */
+    grid-template-columns: auto 180px auto auto minmax(280px, auto) auto !important;
+    /* Reduced search column width from 1fr to fixed 180px */
     align-items: center !important;
-    gap: 20px !important;
+    /* Reduce overall gap to bring elements closer together */
+    gap: 10px !important; /* Reduced from 20px */
+}
+
+.tb-grid-search {
+    justify-content: flex-start;
+}
+
+.tb-grid-search .tb-search {
+    width: 100%;
+}
+
+.tb-grid-search .tb-search form {
+    width: 100%;
+    /* Reduce the max-width of the search form */
+    max-width: 160px; /* Reduced from 260px */
+}
+
+/* Also update the general search form styling */
+.tb-search form {
+    display: flex;
+    align-items: center;
+    /* Reduce padding to make form more compact */
+    padding: 6px 10px !important; /* Reduced from 6px 15px */
+    max-width: 180px; /* Reduced from 280px */
+    margin: 0 auto;
+}
+
+.tb-search input {
+    border: none;
+    background: transparent;
+    font-size: 14px;
+    color: var(--kopizon-dark);
+    /* Reduce width to make input smaller */
+    width: 100px; /* Reduced from 200px */
+    font-weight: 500;
 }
 
 .tb-grid-col {
@@ -178,10 +214,6 @@ h6 {
 }
 
 .tb-grid-logo {
-    justify-content: flex-start;
-}
-
-.tb-grid-search {
     justify-content: flex-start;
 }
 
@@ -203,13 +235,12 @@ h6 {
     justify-content: flex-end;
 }
 
-.tb-grid-search .tb-search {
-    width: 100%;
-}
-
-.tb-grid-search .tb-search form {
-    width: 100%;
-    max-width: 260px;
+    background: transparent;
+    font-size: 14px;
+    color: var(--kopizon-dark);
+    /* Reduce width to make input smaller */
+    width: 120px; /* Reduced from 200px */
+    font-weight: 500;
 }
 
 .tb-left {
@@ -246,6 +277,18 @@ box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
 transition: 0.3s;
 }
 
+.tb-search form {
+    gap: 8px; /* Reduced gap to make form more compact */
+    background: grey;
+    padding: 6px 12px; /* Reduced padding */
+    border-radius: 30px;
+    border: 1px solid #eef2f6;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+    transition: 0.3s;
+    width: 100%;
+    max-width: 180px; /* Set specific max-width */
+}
+
 .tb-search form:focus-within {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
     border-color: #d1d9e0;
@@ -262,8 +305,10 @@ transition: 0.3s;
     background: transparent;
     font-size: 14px;
     color: var(--kopizon-dark);
-    width: 200px;
+    width: 100px; /* Specific width for search input */
     font-weight: 500;
+    padding: 0; /* Remove any extra padding */
+    margin: 0; /* Remove any extra margins */
 }
 
 .tb-search input::placeholder {
@@ -282,20 +327,6 @@ transition: 0.3s;
     padding: 0 10px;
     /* Added 20px right padding as requested */
 }
-
-.tb-center-social {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    /* Align icons to the left */
-    gap: 10px;
-    /* Maintain gap between icons */
-    flex: 0 0 auto;
-    /* Don't grow or shrink, use only needed space */
-    min-width: auto;
-    /* Allow to be as small as needed */
-    padding: 0;
-    /* Remove any extra padding */
     flex-wrap: nowrap !important;
     /* Ensure icons stay in one row */
     width: 100%;
@@ -382,7 +413,7 @@ transition: 0.3s;
 @media (max-width: 1200px) {
     .mockup-top-bar .container.tb-grid-container {
         grid-template-columns: repeat(3, 1fr) !important;
-        row-gap: 20px !important;
+        row-gap: 15px !important; /* Reduced from 20px */
         justify-items: center !important;
     }
 
@@ -415,7 +446,7 @@ transition: 0.3s;
 @media (max-width: 768px) {
     .mockup-top-bar .container.tb-grid-container {
         grid-template-columns: 1fr !important;
-        row-gap: 20px !important;
+        row-gap: 15px !important; /* Reduced from 20px */
         justify-items: center !important;
         text-align: center;
     }
