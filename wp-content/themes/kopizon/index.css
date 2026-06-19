@@ -15,7 +15,7 @@ body {
     color: var(--kopizon-text);
     overflow-x: hidden;
     margin: 0;
-    padding: 0;
+    align-items: flex-end padding: 0;
 }
 
 .bg-white {
@@ -26,18 +26,108 @@ body {
     background-color: var(--kopizon-light-grey) !important;
 }
 
+/* Container */
 .container {
-    max-width: var(--kopizon-container) !important;
-    width: 100% !important;
-    margin: 0 auto;
-    padding: 0 40px !important;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+@media (min-width: 576px) {
+    .container {
+        max-width: 540px;
+    }
+}
+
+@media (min-width: 768px) {
+    .container {
+        max-width: 720px;
+    }
+}
+
+@media (min-width: 992px) {
+    .container {
+        max-width: 960px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1140px;
+    }
+}
+
+@media (min-width: 1400px) {
+    .container {
+        max-width: var(--kopizon-container, 1320px);
+        /* Using the CSS variable if available */
+    }
+}
+
+.tb-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.tb-left {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex: 1;
+    /* Take available space */
+    min-width: 0;
+    /* Allow to be smaller than content size */
+}
+
+.tb-center-social {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    /* Add consistent spacing between icons */
+    flex: 0 0 auto;
+    /* Don't grow or shrink, use only needed space */
+    min-width: auto;
+    /* Allow to be as small as needed */
+    padding: 0 10px;
+    /* Add some padding to prevent touching edges */
+}
+
+.tb-center-social a {
+    color: var(--kopizon-dark);
+    opacity: 0.7;
+    font-size: 16px;
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    /* Fixed width for consistent sizing */
+    height: 20px;
+    /* Fixed height for consistent sizing */
+}
+
+.tb-center-social a:hover {
+    color: white;
+    transform: translateY(-2px);
+}
+
+.tb-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
 }
 
 /* Elementor Container Alignment */
 .e-con-inner {
     max-width: var(--kopizon-container) !important;
-    padding-left: 40px !important;
-    padding-right: 40px !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
     margin: 0 auto !important;
 }
 
@@ -53,11 +143,13 @@ h6 {
 
 .mockup-top-bar {
     background: #ffffff;
-    padding: 12px 0;
+    /* padding: 12px 0; */
+    padding: 0px 0;
     border-bottom: 1px solid #eef2f6;
     color: var(--kopizon-dark);
 }
 
+/* Commented out original .tb-container styles per project rules to prevent deletion
 .mockup-top-bar .container.tb-container {
     max-width: 1400px !important;
     width: 100% !important;
@@ -66,10 +158,63 @@ h6 {
     justify-content: space-between;
     align-items: center;
 }
+*/
+
+.mockup-top-bar .container.tb-grid-container {
+    max-width: 1400px !important;
+    width: 100% !important;
+    padding: 10px 30px !important;
+    display: grid !important;
+    grid-template-columns: auto minmax(160px, 1fr) auto auto minmax(280px, auto) auto !important;
+    /* Increased width of social column from 165px to 220px */
+    align-items: center !important;
+    gap: 20px !important;
+}
+
+.tb-grid-col {
+    display: flex;
+    align-items: center;
+    min-width: 0;
+}
+
+.tb-grid-logo {
+    justify-content: flex-start;
+}
+
+.tb-grid-search {
+    justify-content: flex-start;
+}
+
+.tb-grid-call {
+    justify-content: center;
+}
+
+.tb-grid-email {
+    justify-content: center;
+}
+
+.tb-grid-social {
+    justify-content: center;
+    min-width: 280px !important;
+    /* Increased width to accommodate 7 icons */
+}
+
+.tb-grid-lang {
+    justify-content: flex-end;
+}
+
+.tb-grid-search .tb-search {
+    width: 100%;
+}
+
+.tb-grid-search .tb-search form {
+    width: 100%;
+    max-width: 260px;
+}
 
 .tb-left {
     display: flex;
-    align-items: center;
+    align-items: right;
     gap: 30px;
     color: white;
 }
@@ -88,13 +233,17 @@ h6 {
 .tb-search form {
     display: flex;
     align-items: center;
-    gap: 12px;
-    background: white;
-    padding: 8px 18px;
-    border-radius: 30px;
-    border: 1px solid #eef2f6;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
-    transition: 0.3s;
+}
+
+}
+
+gap: 12px;
+background: grey;
+padding: 8px 18px;
+border-radius: 30px;
+border: 1px solid #eef2f6;
+box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+transition: 0.3s;
 }
 
 .tb-search form:focus-within {
@@ -125,25 +274,189 @@ h6 {
     outline: none;
 }
 
+.tb-grid-social {
+    justify-content: flex-start;
+    /* Align icons to the left */
+    min-width: 300px !important;
+    /* Increased width to comfortably accommodate 4 icons */
+    padding: 0 10px;
+    /* Added 20px right padding as requested */
+}
+
 .tb-center-social {
     display: flex;
     align-items: center;
-    gap: 20px;
+    justify-content: flex-start;
+    /* Align icons to the left */
+    gap: 10px;
+    /* Maintain gap between icons */
+    flex: 0 0 auto;
+    /* Don't grow or shrink, use only needed space */
+    min-width: auto;
+    /* Allow to be as small as needed */
+    padding: 0;
+    /* Remove any extra padding */
+    flex-wrap: nowrap !important;
+    /* Ensure icons stay in one row */
+    width: 100%;
+    /* Ensure full width of column is used */
+}
+
+}
+
 }
 
 .tb-center-social a {
     color: var(--kopizon-dark);
     opacity: 0.7;
-    font-size: 16px;
+    font-size: 14px;
+    /* Slightly reduced icon size to fit more icons */
     transition: 0.3s;
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 26px;
+    /* Reduced width for more icons to fit */
+    height: 26px;
+    /* Reduced height for more icons to fit */
 }
 
 .tb-center-social a:hover {
     color: white;
     transform: translateY(-2px);
+}
+
+/* Responsive adjustments for header */
+/* Commented out original responsive rules for flex top bar per project rules to prevent deletion
+@media (max-width: 992px) {
+    .tb-container {
+        flex-direction: row;
+        align-items: center;
+        gap: 10px;
+    }
+    
+    .tb-left {
+        flex: 1;
+        min-width: 0; 
+    }
+    
+    .tb-center-social {
+        order: 3; 
+        justify-content: flex-end;
+        flex: 0 0 auto;
+    }
+}
+
+    
+    .tb-right {
+        order: 2; 
+        flex: 0 0 auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .tb-container {
+        flex-wrap: wrap;
+        padding: 10px 0;
+    }
+    
+    .tb-left, .tb-center-social, .tb-right {
+        flex: 1 1 100%; 
+        justify-content: center;
+        text-align: center;
+    }
+    
+    .tb-center-social {
+        order: 2;
+        padding: 10px 0;
+    }
+    
+    .tb-right {
+        order: 3;
+        justify-content: center;
+    }
+}
+*/
+
+/* New Grid Top Bar Responsive Rules */
+@media (max-width: 1200px) {
+    .mockup-top-bar .container.tb-grid-container {
+        grid-template-columns: repeat(3, 1fr) !important;
+        row-gap: 20px !important;
+        justify-items: center !important;
+    }
+
+    .tb-grid-col {
+        justify-content: center !important;
+        width: 100%;
+    }
+
+    .tb-grid-social {
+        order: 6;
+        /* Ensure social icons appear in appropriate position on smaller screens */
+    }
+
+    .tb-grid-lang {
+        justify-content: center !important;
+    }
+}
+
+@media (max-width: 992px) {
+    .mockup-top-bar .container.tb-grid-container {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+
+    .tb-grid-social {
+        min-width: auto !important;
+        /* Reset min-width on smaller screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .mockup-top-bar .container.tb-grid-container {
+        grid-template-columns: 1fr !important;
+        row-gap: 20px !important;
+        justify-items: center !important;
+        text-align: center;
+    }
+
+    .tb-grid-col {
+        justify-content: center !important;
+        width: 100%;
+    }
+
+    .tb-grid-social {
+        min-width: auto !important;
+        /* Reset min-width on mobile */
+        justify-content: center !important;
+    }
+
+    .tb-grid-lang {
+        justify-content: center !important;
+    }
+}
+
+
+/* Adjust main header navigation for mobile */
+@media (max-width: 992px) {
+    .mockup-header .header-container {
+        flex-wrap: wrap;
+        padding: 10px 15px !important;
+    }
+
+    .main-navigation {
+        flex: 1 1 100%;
+        order: 2;
+        margin: 15px 0;
+    }
+
+    .header-right {
+        order: 1;
+        justify-content: flex-end;
+        flex: 0 0 auto;
+    }
+}
+
 }
 
 .tb-right {
@@ -259,7 +572,8 @@ h6 {
 
 .mockup-header {
     background: var(--kopizon-pink);
-    padding: 10px 0;
+    /* padding: 10px 0; */
+    padding: 0px 0;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     position: relative;
     z-index: 99999999 !important;
@@ -267,12 +581,18 @@ h6 {
 }
 
 .mockup-header .container.header-container {
-    max-width: 1400px !important;
+    max-width: var(--kopizon-container) !important;
     width: 100% !important;
-    padding: 0 15px !important;
+    /* padding: 5px 15px !important; */
+    padding: 0px 15px !important;
+    /* Reduced from 0 15px */
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: nowrap;
+    /* Prevent wrapping of header elements */
+    gap: 20px;
+    /* Add consistent spacing */
 }
 
 .header-right {
@@ -307,22 +627,33 @@ h6 {
     color: rgba(0, 0, 0, 0.8);
 }
 
-.btn-donate-red {
-    background: white;
-    color: var(--kopizon-pink) !important;
-    padding: 12px 28px;
-    border-radius: 4px;
-    font-weight: 700;
-    text-decoration: none !important;
-    font-size: 14px;
-    transition: 0.3s;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+background: white;
+color: var(--kopizon-pink) !important;
+padding: 12px 28px;
+border-radius: 4px;
+font-weight: 700;
+text-decoration: none !important;
+font-size: 14px;
+transition: 0.3s;
+box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .btn-donate-red:hover {
     background: #f8f9fa;
     transform: translateY(-2px);
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.mockup-header {
+    background: var(--kopizon-pink);
+    /* padding: 5px 0; */
+    /* Reduced from 10px to make more compact */
+    padding: 0px 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    /* Reduced shadow */
+    position: relative;
+    z-index: 99999999 !important;
+    /* Forces header above all page content */
 }
 
 .mockup-header.is-sticky {
@@ -378,47 +709,111 @@ img.custom-logo {
 .mockup-header nav ul {
     display: flex;
     align-items: center;
-    gap: 35px;
+    gap: 15px;
+    /* Further reduced from 20px */
     list-style: none;
     margin: 0;
-    padding: 0;
-}
-
-.nav-menu li a {
-    font-weight: 700;
-    font-size: 16px;
-    color: white;
-    transition: color 0.3s;
-}
-
-.nav-menu li a:hover {
-    color: rgba(255, 255, 255, 0.8);
-}
-
-.mockup-header nav ul li {
-    position: relative;
+    /* padding: 5px 0; */
+    /* Further reduced vertical padding */
+    padding: 0px 0;
 }
 
 .mockup-header nav ul li a {
     text-decoration: none !important;
     color: white;
     font-weight: 700;
-    font-size: 13px;
+    font-size: 12px;
+    /* Reduced font size */
     display: flex;
     align-items: center;
-    gap: 6px;
+    gap: 4px;
+    /* Reduced gap */
     transition: all 0.3s ease;
     position: relative;
-    padding: 0;
+    /* padding: 3px 8px; */
+    /* Further reduced padding to make more compact */
+    padding: 0px 8px;
+    height: 24px;
+    /* Explicitly set smaller height */
+    line-height: 1.2;
+    /* Tighter line height */
 }
 
+/* Specific styling for pink menu links */
+.nav-menu li a[href*="get-involved"],
+.nav-menu li a:contains("Get Involved"),
+.mobile-menu-items li a[href*="get-involved"],
+.nav-menu li a[style*="kopizon-pink"] {
+    color: white !important;
+    text-decoration: underline !important;
+    padding: 3px 8px !important;
+    /* Consistent padding */
+    height: 24px !important;
+    /* Consistent height */
+    display: flex !important;
+    align-items: center !important;
+}
+
+.mockup-header .container.header-container {
+    max-width: 1400px !important;
+    width: 100% !important;
+    /* padding: 3px 15px !important; */
+    /* Reduced from 5px to make more compact */
+    padding: 0px 15px !important;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Reduce submenu height as well */
+.mockup-header .dropdown-menu,
+.mockup-header .sub-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    /* Reduced shadow */
+    border-radius: 0 0 12px 12px;
+    min-width: 220px;
+    padding: 4px 0;
+    /* Further reduced from 6px */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(15px);
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    z-index: 999999999 !important;
+    border-top: 2px solid var(--kopizon-pink);
+    display: block !important;
+    list-style: none;
+}
+
+.mockup-header .dropdown-menu li a,
+.mockup-header .sub-menu li a {
+    padding: 4px 20px;
+    /* Further reduced from 6px */
+    font-weight: 500;
+    font-size: 13px;
+    /* Reduced font size */
+    color: #555;
+    transition: 0.3s;
+    display: block;
+    width: 100%;
+    height: 20px;
+    /* Explicitly set smaller height */
+    line-height: 1.2;
+}
+
+/* Reduce the height of hover effect line */
 .mockup-header nav ul li a::after {
     content: '';
     position: absolute;
-    bottom: -5px;
+    bottom: -3px;
+    /* Adjusted position */
     left: 0;
     width: 0;
-    height: 2px;
+    height: 1.5px;
+    /* Reduced thickness */
     background: white;
     transition: width 0.3s ease;
 }
@@ -480,7 +875,9 @@ img.custom-logo {
 .mockup-header .dropdown-menu li,
 .mockup-header .sub-menu li {
     padding: 0;
-    width: 100%;
+}
+
+width: 100%;
 }
 
 .mockup-header .dropdown-menu li a,
@@ -1014,7 +1411,6 @@ img.custom-logo {
 .dark-section h4 {
     color: var(--kopizon-dark) !important;
 }
-
 
 .dark-grid {
     display: grid;
@@ -1588,7 +1984,8 @@ img.custom-logo {
 }
 
 .hamburger-btn {
-    display: none;
+    /* display: none; */
+    display: block !important;
     background: none;
     border: none;
     cursor: pointer;
@@ -1600,7 +1997,8 @@ img.custom-logo {
     display: block;
     width: 25px;
     height: 3px;
-    background: var(--kopizon-dark);
+    /* background: var(--kopizon-dark); */
+    background: white !important;
     margin: 5px 0;
     border-radius: 3px;
     transition: 0.3s;
@@ -1759,7 +2157,8 @@ img.custom-logo {
     background: #ffffff !important;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12) !important;
     animation: stickySlideDown 0.4s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
-    padding: 12px 0 !important;
+    /* padding: 12px 0 !important; */
+    padding: 0px 0 !important;
     will-change: transform;
 }
 
@@ -1787,7 +2186,6 @@ img.custom-logo {
 .is-sticky .main-navigation {
     margin-right: auto;
 }
-
 
 @keyframes slideDown {
     from {
@@ -2154,7 +2552,6 @@ img.custom-logo {
 /* ==========================================================================
    Premium Detail Page Components (Qizon Style)
    ========================================================================== */
-
 /* Campaign Stats Grid */
 .campaign-stats-grid {
     display: grid;
@@ -2495,4 +2892,156 @@ h6[style*="#00d084"],
     background: #c2185b;
     transform: translateY(-3px);
     box-shadow: 0 8px 20px rgba(233, 30, 99, 0.5);
+}
+
+.main-navigation {
+    display: none !important;
+}
+
+.is-sticky .hamburger-btn span {
+    background: var(--kopizon-dark) !important;
+}
+
+.home .elementor-section:not(header *):not(.elementor-location-header *),
+.home .elementor-column:not(header *):not(.elementor-location-header *),
+.home .elementor-widget:not(header *):not(.elementor-location-header *),
+.home .e-con:not(header *):not(.elementor-location-header *),
+.home .e-con-inner:not(header *):not(.elementor-location-header *),
+.home .elementor-widget-spacer:not(header *):not(.elementor-location-header *),
+.home .elementor-spacer:not(header *):not(.elementor-location-header *),
+.home .elementor-spacer-inner:not(header *):not(.elementor-location-header *) {
+    margin-top: 0px !important;
+    margin-bottom: 0px !important;
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+    height: 0px !important;
+    min-height: 0px !important;
+}
+
+.home .new-patients-section,
+.home .experience-section,
+.home .patients-needs-section,
+.home .testimonials-section,
+.home .news-section,
+.home .mockup-hero,
+.home .dark-section,
+.home .split-panel-section,
+.home .footer-cta-blue {
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+    margin-top: 0px !important;
+    margin-bottom: 0px !important;
+    height: auto !important;
+    min-height: auto !important;
+}
+
+.elementor-nav-menu--main {
+    display: none !important;
+}
+
+.elementor-menu-toggle {
+    display: flex !important;
+}
+
+.elementor-menu-toggle svg {
+    fill: white !important;
+}
+
+.elementor-element-a8a8898,
+.elementor-element-39c6171,
+.elementor-element-a8a8898 .e-con-inner,
+.elementor-element-39c6171 .e-con-inner {
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+    margin-top: 0px !important;
+    margin-bottom: 0px !important;
+}
+
+.elementor-element-a8a8898 .elementor-widget,
+.elementor-element-39c6171 .elementor-widget {
+    margin-top: 0px !important;
+    margin-bottom: 0px !important;
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+}
+
+.elementor-element-7eeb4ad,
+.elementor-element-abb2180 {
+    margin-bottom: 0px !important;
+}
+
+.elementor-nav-menu--dropdown.elementor-active {
+    display: block !important;
+}
+
+@media (min-width: 1025px) {
+    .elementor-nav-menu--dropdown:not(.elementor-active) {
+        display: none !important;
+    }
+}
+
+/* Custom styles for relocated header menu and language switcher */
+@media (min-width: 1025px) {
+
+    /* Hide the pink bar section on desktop to prevent visual flash before JS runs */
+    .elementor-element-39c6171 {
+        display: none !important;
+    }
+
+    /* Prevent wrapping in the top-right header container and align items perfectly */
+    .elementor-element-611fe55 {
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        align-items: center !important;
+        justify-content: flex-end !important;
+        gap: 15px !important;
+        /* Reduce spacing between elements to fit them all in one line */
+    }
+
+    /* Make search form input slightly more compact to free up space */
+    .elementor-element-611fe55 .elementor-search-form__input,
+    .elementor-element-611fe55 .tb-search input {
+        width: 150px !important;
+    }
+
+    /* Keep social icons widget as a compact inline item */
+    .elementor-element-611fe55 .elementor-element-bddd97f {
+        width: auto !important;
+        flex: 0 0 auto !important;
+        display: flex !important;
+        align-items: center !important;
+    }
+
+    /* Spacing and layout for relocated widgets next to social icons */
+    .elementor-element-611fe55 .elementor-element-f1b1ed8,
+    .elementor-element-611fe55 .elementor-element-104ef01 {
+        margin: 0 !important;
+        width: auto !important;
+        max-width: max-content !important;
+        flex: 0 0 auto !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+
+    /* Adjust vertical alignment of language switcher flag */
+    .elementor-element-611fe55 .elementor-element-f1b1ed8 img {
+        display: block !important;
+        margin: 0 !important;
+        max-height: 20px !important;
+        width: auto !important;
+    }
+
+    /* Ensure the menu toggle button sits flush and centered vertically */
+    .elementor-element-611fe55 .elementor-element-104ef01 .elementor-menu-toggle {
+        margin: 0 !important;
+        padding: 8px !important;
+        min-height: auto !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        background-color: #34b7f1 !important;
+        /* Keep original cyan background */
+        border-radius: 4px !important;
+    }
 }
